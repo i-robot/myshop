@@ -1,0 +1,83 @@
+#goods_list_wrapper {width:980px;overflow:hidden;clear:both;margin:0px auto;}
+#goods_list_wrapper .gl_left{width:775px;overflow:hidden;float:left;display:inline;margin-right: 5px;}
+#goods_list_wrapper .gl_left .gl_pic{height:67px;overflow:hidden;}
+#goods_list_wrapper .gl_left .gl_pic img{width:775px;height:67px;}
+#goods_list_wrapper .gl_left .nav{height:25px;clear:both;overflow:hidden;margin-top:10px}
+#goods_list_wrapper .gl_left .nav a{color:#000}
+
+
+/*************************************************************************
+筛选器
+*****************************************************************************/
+.selector{clear:both;border: 1px solid #BFBFBF;background-color: #F5F5F5;}
+.selector h1{height:31px;line-height:31px;color:#fff;padding-left:11px;background-color:#757373;font-size:14px;}
+.selector .filter{overflow:hidden;padding-top:10px;}
+.selector .filter ul{overflow:hidden;}
+.selector .filter ul li{line-height:21px;margin-bottom:10px;}
+.selector .filter ul li h2{width:78px;float:left;display:inline;text-align:right;}
+.selector .filter ul li ul li{width:auto;float:left;display:inline;margin-right:3px;}
+.selector .filter ul li ul li a{display:block;padding:0px 8px;color:#333;}
+.selector .filter ul li ul li a:hover{background-color:#d0d0d0;text-decoration: none;}
+.selector .filter ul li ul li a.selected{background-color:#d0d0d0;}
+
+
+/*************************************************************************
+排序
+*****************************************************************************/
+/*下拉选择*/
+.selector .sort_wrapper{border-top: 1px solid #BFBFBF;height:34px;background:url(../images/bj1.jpg) repeat-x left top;}
+.selector .sort_wrapper .select_box{width:220px;float:left;margin-right:65px;}
+.selector .sort_wrapper .select_box h2{width:77px;height:34px;line-height:34px;float:left;display:inline;text-align:right;}
+.selector .sort_wrapper .select_box select{ height:21px;float:left;display:inline;margin-top:7px;}
+
+/**切换选择**/
+.selector .sort_wrapper .switch_box{width:216px;height:21px;float:left;display:inline;margin-top:7px;}
+.selector .sort_wrapper .switch_box ul{width:216px;height:21px;}
+.selector li.way{border:1px solid #bfbebe;border-right:0px none;float:left;height:19px;line-height:19px;display:inline;}
+.selector li.last{border-right:1px solid #bfbebe}
+
+.selector li.way a{color:#303030;display:block;background: url("../images/sort.png") no-repeat scroll 0 0 transparent;}
+.selector li.way a:hover,.selector li.selected a{text-decoration: none;background-color:#fff}
+
+/**asc**/
+li.way a.price_asc, li.way a.grade_asc, li.way a.sales_asc{background-position:-44px 1px}/**前三个- asc默认排序**/
+li.way a.time_asc{background-position:-20px 1px}/**上架时间-默认排序**/
+
+li.selected a.price_asc,li.selected a.grade_asc,li.selected a.sales_asc
+,li.way a.price_desc:hover,li.way a.grade_desc:hover, li.way a.sales_desc:hover{background-position:-44px -61px} /**前三个- asc选中状态**/
+
+li.selected a.time_asc,li.way a.time_desc:hover{background-position:-20px -61px}/**上架时间 -asc选中状态**/
+
+/**desc**/
+li.way a.price_desc, li.way a.grade_desc, li.way a.sales_desc{background-position:-44px 21px}/**前三个- desc默认排序**/
+li.way a.time_desc{background-position:-20px 21px}/**上架时间-desc默认排序**/
+
+li.selected a.price_desc,li.selected a.grade_desc,li.selected a.sales_desc
+,li.way a.price_asc:hover,li.way a.grade_asc:hover, li.way a.sales_asc:hover{background-position:-44px -40px} /**前三个- desc选中或asc悬停状态**/
+
+li.selected a.time_desc,li.way a.time_asc:hover{background-position:-20px -40px}/**上架时间 -desc选中或asc悬停状态**/
+
+li.way a span{padding:0px 16px 0px 5px;}
+
+
+/*************************************************************************
+商品列表
+*****************************************************************************/
+.list_wrapper{clear:both;overflow:hidden;}
+.list_wrapper .inner_box{overflow:hidden;border-left:1px dashed #ccc;}
+.list_wrapper .inner_box li{overflow:hidden;width:192px;float:left;display:inline;height:251px;border-right:1px dashed #ccc;border-bottom:1px dashed #ccc;}
+.list_wrapper .inner_box li:hover{background-color:#f6f8df;}
+.list_wrapper .inner_box li img{width:175px;height:175px;margin:5px 6px 0px;}
+.list_wrapper .inner_box li h2{width:176px;text-align:center;font-weight:normal;margin-left:6px;height:20px;line-height:20px;overflow:hidden;}
+.list_wrapper .inner_box li h2 a{color:#4c4c4c;}
+.list_wrapper .inner_box li div{width:176px;height:22px;}
+.list_wrapper .inner_box li div p{color:#7f7f7f;width:176px;text-align:center;}
+.list_wrapper .inner_box li div h3{font-weight:normal;width:176px;text-align:center;}
+.list_wrapper .inner_box li div h3 span{color:#E90101;font-size:18px;font-weight:bold;}
+.list_wrapper .inner_box li div a{color:#000;display:block;margin:10px 13px 0px;float:left;width:55px;height:21px;line-height:21px;text-align:center;background:url(../images/gman.jpg) no-repeat left top;}
+.list_wrapper .inner_box .hover{background-color:#f6f8df;}
+
+/**
+分页的覆写
+**/
+#goods_list_wrapper  .page{margin-top:10px}

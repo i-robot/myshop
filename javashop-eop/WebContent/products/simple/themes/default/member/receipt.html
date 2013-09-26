@@ -1,0 +1,19 @@
+<#if receipt?exists >
+<table cellspacing="0" cellpadding="0" border="0" width="100%" id="invoice_bill">
+			<tbody>
+				<tr>
+					<th>抬头:</th>
+					<td>${ receipt.title!''}</td>
+				</tr>
+				<tr>
+					<th>内容:</th>
+					<td>${receipt.content!''}</td>
+				</tr>
+		 
+			</tbody>
+		</table>
+<#else>
+<span> 	
+	没有索取发票
+</span>	
+</#if>

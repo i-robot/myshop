@@ -1,0 +1,44 @@
+<div id="coup_presend">
+	<li class="pop-up_size" style="width: 411px;"><b>请输入受赠人邮箱：</b><span
+		class="pop-up-color">赠送成功后不可撤销</span>
+	</li>
+	<li class="pop-up_center">赠送券号： <#if (mc.cpns_sn)?exists>
+		${mc.cpns_sn} </#if> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可抵扣金额：<span
+		style="color: #e26920;"> <#if (mc.discount_price)?exists>
+			￥${mc.discount_price} </#if></span>
+	</li>
+	<form id="presentform">
+		<li class="pop-up_3"><span class="pop-up_yx">受赠人邮箱：</span> <input
+			id="email" type="text" name="e_mail"
+			style="font-size: 16px; width: 150px; line-height: 20px;  margin-right: 10px;" />
+			<input type="hidden" name="mc_id" value="${mc.id}" /> 
+			<a id="present" href="javascript:;"  >
+			<img src="themes/default/images/zs.jpg" />
+		</a></li>
+	</form>
+<script type="text/javascript">
+$(function(){
+	$("#present").click(function(){
+		var options = {
+				url : "member_coupon.html?widgetid=/member_coupon.html&action=sendpresent&ajax=yes",
+				type : "post",
+				dataType : "json",
+				success : function(responseText) {
+					if (responseText.result == 1) {
+						alert(responseText.message);
+						$("#email").val("");
+						location.href="member_coupon.html?used=all";
+					}
+					if (responseText.result == 0) {
+						alert(responseText.message);
+					}
+				},
+				error : function() {
+					alert("出错了:(");
+				}
+			};
+			$('#presentform').ajaxSubmit(options);
+	});
+});
+</script>
+</div>

@@ -1,0 +1,132 @@
+<#assign regionSelect = "com.enation.app.base.component.widget.regions.RegionSelectDirective"?new()>
+
+<div class="data">
+	<h2>我的收获地址</h2>
+</div>	
+
+<!--温馨提示-->
+<div class="tip">
+	<div class="top"></div>
+	<div class="body">
+		<@image src="images/gth.jpg" />
+	
+		<div>
+			<h2>温馨提示</h2>
+			<p>1、这里将显示您的收货地址信息</p>
+			<p>2、您还可以管理您的收货地址簿、增加新的收货地址等操作。</p>
+		</div>
+	</div>
+	<div class="bottom"></div>
+</div>
+<!--温馨提示结束-->
+
+<div class="tab">
+<ul >
+	<li ><a href="member_address.html"><span>收货地址管理</span></a></li>
+	<li class="selected"><a href="member_address.html?action=add"><span>新增收货地址</span></a></li>
+</ul>
+</div>
+<div class="form_wrap white_box">
+<div class="box" >
+	<div class="top"></div>
+	<div class="body">
+ 
+	<form id="member_addr"  class="validate"   action="member_address.html?action=addsave" method="post">
+
+	<table cellspacing="0" cellpadding="0" border="0" >
+	
+		<tbody>
+			<tr>
+				<th>默认收货地址：</th>
+				<td><label><input type="radio"   checked="checked" value="0" name="address.def_addr">否</label> 
+				<label><input type="radio"   value="1"  name="address.def_addr">是</label></td>
+			</tr>
+			<tr>
+				<th><em></em>姓名：</th>
+				<td><input type="text"  class="input_text "  isrequired="true" name="address.name"   autocomplete="off"></td>
+			</tr>
+	
+			<tr>
+				<th>手机：</th>
+				<td><input type="text" class="input_text" name="address.mobile" id="mobile" autocomplete="off"></td>
+			</tr>
+	
+			<tr>
+				<th>电话：</th>
+				<td><input type="text"  class="input_text"  name="address.tel"  id="tel" dataType="tel_num"   autocomplete="off"><span
+					class="infotips">其中联系电话和联系手机必须填写一项</span></td>
+			</tr>
+					
+			<tr>
+				<th><em></em>地区：</th>
+				<td>		
+				<@regionSelect />
+				</td>
+			</tr>
+			<tr>
+				<th><em></em>地址：</th>
+				<td><textarea   rows="3" cols="30" name="address.addr" isrequired="true" type="textarea"  ></textarea></td>
+			</tr>
+			<tr>
+				<th><em></em>邮编：</th>
+				<td><input   class="input_text" isrequired="true" name="address.zip" id="zipcode" autocomplete="off"  dataType="post_code" ></td>
+			</tr>
+			<tr>
+				<th></th>
+	
+				<td>
+					<div class="btn"><input type="submit" name="submit" class="yellow_btn" value="保存并返回"></div>
+				</td>
+	
+			</tr>
+		</tbody>
+	</table>
+	
+ 
+	</form>
+	</div>
+	<div class="bottom"></div>
+
+</div>
+</div>
+<script type="text/javascript">
+<!--
+$(function(){
+	
+
+	//地区联动选择-选择最后一级（区）时自动设置邮编
+	RegionsSelect.regionChange=function(regionid,name,zipcode){
+		$("#zipcode").val(zipcode);
+	};
+	
+	$("#mobile").setValidator(function(){
+		var tel= $.trim( $("#tel").val() ) ;
+		var mobile = $.trim( $("#mobile").val() ) ;
+		
+		if( tel=="" && mobile==""  ){
+			return  "手机或电话必须填写一项";
+		}
+		
+	 
+		if( mobile!="" &&!$.isMobile(mobile) ){
+			return  "手机格式不正确";
+		}
+		
+		return true;
+
+	});
+
+	
+	
+	$("#region_id").setValidator(function(){
+		var value = $("#region_id").val();
+		if( value=="" || value=="0" ) return "地区信息不完整";
+		else return true;
+
+	});
+	
+	
+	
+});
+//-->
+</script>

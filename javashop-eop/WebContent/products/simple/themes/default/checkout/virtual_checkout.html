@@ -1,0 +1,238 @@
+<style>
+#checkout_wrapper .pay_frame .address .modify h1  ,
+#checkout_wrapper .pay_frame .address .modify .input  ,
+#checkout_wrapper .pay_frame .address .modify .input table,
+#checkout_wrapper .pay_frame .payment .modify
+{background-color:#FFF}
+</style>
+<div id="checkout_wrapper"  >
+	<div class="pay_warm">请确认以下信息，然后提交订单</div>
+	<div class="pay_frame">
+		<form class="validate" id="checkoutform">
+			<div class="goods_wrapper">
+				<h1>商品清单</h1>
+				<#if item?exists >
+				<input type="hidden" id="productid" name="productid" value="${item.product_id}" autocomplete="off">
+				<input type="hidden" id="num" name="num" value="${item.num}" autocomplete="off">
+				<input type="hidden" id="itemtype" value="${item.itemtype}" autocomplete="off">
+				<table cellspacing="0" cellpadding="3" width="100%" >
+					<thead>
+						<tr>
+							<th>图片</th>
+							<th>商品名称</th>
+							<th>商品积分</th>
+							<th>销售价格</th> 
+							<th>优惠价格</th>
+							<th>数量</th>
+							<th>小计</th>
+						</tr>
+					</thead>
+					<tbody>
+						 
+						<tr itemid="${item.id}" >
+							<td>
+								<a target="_blank" href="goods-${item.goods_id}.html">
+									<span style="display: block; height: 50px;" class="cart-product-img">
+
+										<@image height="50"  src="${item.image_default}"  postfix='_thumbnail'  style="cursor: pointer;" />
+
+									</span>
+								</a>				
+							</td>
+							<td style="text-align: left;">
+								<a target="_blank" href="goods-${item.goods_id}.html">${item.name}</a>
+								<#if item.others?exists>
+									<#if item.others.specList?exists>
+									<span><#list item.others.specList as spec><#if spec_index!=0></#if><strong>${spec.name}:<em style="color:#ED7108">${spec.value}</em></strong></#list></span>
+									</#if>
+								</#if>								
+							</td>
+							<td>${item.point}</td>
+							<td class=" mktprice1">${item.price?string("currency")}</td>
+							<td>${item.coupPrice?string("currency")}</td>
+							<td>
+								${item.num}
+							</td>
+							<td class="itemTotal">${item.subtotal?string("currency")}</td>
+						</tr>
+						 
+					</tbody>
+				</table>
+				</#if>
+			</div>
+			
+						
+			<div class="box address">
+
+				<div class="modify"  >
+					<h1>请输入邮箱</h1>
+					
+					<div class="input"> 
+						<table cellspacing="0" cellpadding="0" border="0" width="100%" >
+							<tbody>
+						
+								<tr>
+									<th><em style="color: red;">*</em> email：</th>
+									<td>
+									<input  id="addr" size="30" style="width: 200px;"   name="email" isrequired="true" dataType="email"  autocomplete="off">相应的卡号和密码会发送至此邮箱，请注意查收</td>
+								</tr>	
+						
+							
+							</tbody>
+						</table>
+					</div> 
+			 
+				</div>
+			</div>
+			
+			<div class="box payment" >
+		 
+				<div class="modify">
+					<h1>付款方式</h1>
+					<div class="list"></div>
+		 
+				</div>
+			</div>
+
+			<div class="order_total">
+				<div class="meta_wrapper">
+					<div class="receipt pucker">
+						<h1><input type="checkbox" name="receipt" value="1"  autocomplete="off">索取发票 </h1>
+						<div class="content" style="display:none">
+							<ul>
+								<li>发票抬头:<input type="radio" name="receiptType" value="1" checked="true" >个人&nbsp;&nbsp;<input  name="receiptType" type="radio" value="2">单位
+									<input type="text" name="receiptTitle" id="receiptTitle" style="display:none" />
+								</li>
+							
+								<li>发票内容：
+									<select name="receiptContent" >
+										<option value="办公用品">办公用品</option>
+										<option value="劳保用品">劳保用品</option>
+										<option value="耗材">耗材</option>
+									</select>
+								</li>
+								<li class="notice">发票在您收到货30天后通过平邮寄出，请注意查收 </li>
+								<li class="warning">注：内容不全默认为不索取发票</li>
+							</ul>
+						</div>
+					</div>
+				
+ 
+
+					<div class="remark pucker"> 
+						<h1><input type="checkbox" autocomplete="off">订单备注 </h1>
+						<div class="content" style="display:none">
+							<ul>
+								<li><input type="text" name="remark" style="width:300px;height:24px"/></li>
+								<li>*请勿填写有关支付/收货/发票方面的信息，如有特殊需要请联系客服人员。</li>
+							</ul>
+						</div>
+					</div>	
+				</div>
+				
+				<div class="total_wrapper"></div>
+				
+				<div class="button_wrapper btn">
+					<input type="button" value="提交订单" id="createBtn" class="blue_btn" />
+				</div>
+			</div>
+		</form>	
+	</div>
+</div>
+
+<script>
+
+//Coupon.refreshPrice=function(){
+//	VirtualCheckout.loadOrderTotal();
+//}
+
+var VirtualCheckout={
+		init:function(){
+			var self = this;
+			this.loadPayment();
+			this.loadOrderTotal();
+			$("#createBtn").click(function(){
+				self.createOrder();
+			});
+			
+
+			/**
+			 * 发票等显示的切换
+			 */
+			$(".pucker input[type=checkbox]").click(function(){
+				var parent = $(this).parent();
+				
+				if(this.checked){
+					parent.siblings(".content").show();
+				}else{
+					parent.siblings(".content").hide();
+				}
+				
+			});
+			
+			
+			/**
+			 * 显示或隐藏发票抬头
+			 */
+			$(".receipt [name=receiptType]").click(function(){
+				var value = $(this).val();
+				if(value=="1"){
+					$(".receipt [name=receiptTitle]").hide();
+				}else{
+					$(".receipt [name=receiptTitle]").show();
+				}
+			});
+						
+		},
+		loadPayment:function(){
+			var self = this;
+		 
+			this.payModifyWrap    =  $("#checkout_wrapper .payment .modify");  
+			
+			this.payModifyWrap.find(".list").load("checkout.html?widgetid=checkout&action=shopPaymentList&ajax=yes",function(){
+				self.payModifyWrap.find("input[name=paymentId]").click(function(){
+					self.payModifyWrap.find(".biref").hide();
+					$(this).parents("li").find(".biref").show();
+				});
+			});
+		},
+		createOrder:function(){
+	 		$.Loading.show("正在提交您的订单，请稍候..."); 
+			var options = {
+					url : "virtual_checkout.html?widgetid=checkout&ajax=yes&action=createOrder",
+					type : "POST",
+					dataType : 'json',
+					success : function(result) {
+		 				if(result.result==1){
+			 				location.href="orderpay.html?sn="+result.ordersn;
+		 					 
+			 			}else{
+			 				$.Loading.hide();
+			 				$.alert(result.message);
+				 		} 
+					},
+					error : function(e) {
+						$.alert("出现错误 ，请重试");
+					}
+			};
+
+			$('#checkoutform').ajaxSubmit(options);		
+		},
+	 	loadOrderTotal:function(){
+	 		
+	 	 	var productid  = $("#productid").val();
+	 	 	var num= $("#num").val();
+	 	 	var itemtype= $("#itemtype").val();
+	 	 	
+	 		$(".total_wrapper").load
+	 		(
+	 		"virtual_checkout.html?widgetid=checkout&action=showOrderTotal&ajax=yes&productid="+productid+"&num="+num+"&itemtype="+itemtype
+	 		);
+	 		
+	 	}
+} 
+
+$(function(){
+	VirtualCheckout.init();
+})
+</script>

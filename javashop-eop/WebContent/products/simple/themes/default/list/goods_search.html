@@ -1,0 +1,60 @@
+<!--商品筛选-->
+	<div class="selector">
+		<h1>商品筛选</h1>
+		<div class="filter">
+			<ul>
+			  
+			<#if goodsSelector.gys?exists> 
+					<li>
+						<h2>供应商：</h2>
+						<ul>
+							<#list goodsSelector.gys as selector>
+								<li><a href="${selector.url}" <#if selector.isSelected>class="selected"</#if>>${selector.name}</a> </li>
+							</#list>
+						</ul>
+					</li>
+			</#if>
+			
+				<#if goodsSelector.brand?exists> 
+					<li>
+						<h2>品牌：</h2>
+						<ul>
+							<#list goodsSelector.brand as selector>
+								<li><a href="${selector.url}" <#if selector.isSelected>class="selected"</#if>>${selector.name}</a> </li>
+							</#list>
+						</ul>
+					</li>
+				</#if>
+				<#if goodsSelector.prop?exists>
+					<#assign propSelector= goodsSelector.prop>
+					<#list  propSelector?keys as propname>
+						<li>
+							<h2>${propname}：</h2>
+							<ul>
+								<#list propSelector[propname] as selector >
+									<li><a href="${selector.url}" <#if selector.isSelected>class="selected"</#if>>${selector.name}</a> </li>
+								</#list>
+							</ul>
+						</li>
+					</#list>
+				</#if>
+				
+				
+			<#if goodsSelector.price?exists>
+		 	<li>
+			<h2>价格：</h2>
+			<ul>
+			<#list goodsSelector.price as selector>
+			<li> <a href="${selector.url}"  <#if selector.isSelected>class="selected"</#if>>${selector.name}</a></li>
+			</#list>
+			</ul>
+		 	</li>
+			</#if>
+
+				
+			</ul>
+		</div>
+		<#include 'title.html' />
+	</div>
+	<!--商品筛选结束-->
+	<#include 'goods_list.html' />

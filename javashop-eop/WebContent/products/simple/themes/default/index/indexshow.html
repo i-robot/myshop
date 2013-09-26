@@ -1,0 +1,12 @@
+<ul>
+<#list goodsList as goods>
+	<li <#if !goods_has_next>class="last"</#if>>
+		<a href="goods-${goods.goods_id}.html"><@image src="${goods.thumbnail_pic}"  /></a>
+		<div class="indexshow">
+			<a href="goods-${goods.goods_id}.html">${goods.name}</a>
+			<span><del>${goods.mktprice?string.currency}</del></span>
+			<span><strong>${goods.price?string.currency}</strong>元</span>
+		</div>
+	</li>
+</#list>
+</ul>

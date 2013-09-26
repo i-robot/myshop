@@ -1,0 +1,36 @@
+<#include 'common/header.html' />
+
+<@css src="css/member.css" />
+
+
+<div id="content_wrapper" class="visitor_order_detail" style="margin:0 auto;width:980px">
+	<div class="left">
+	${widget_order_detail}
+	</div>
+	
+	<div class="right">
+		
+				<div class="goods_list_box">
+					<div class="commend">
+						<h1><span></span>推荐商品</h1>
+						${widget_reco}
+					</div>
+					<div class="hot">
+						<h1><span></span>热卖排行榜</h1>
+						${widget_reco}
+					</div>
+					<div class="gl_adv">
+					${widget_av1} 
+					${widget_av2}
+					<a href="#"><@image src="images/huiyuan.jpg"  alt="商品列表右侧下部广告图片" /></a>
+					</div>
+				</div>
+						
+	</div>
+	
+</div>
+
+
+
+ 
+<#include 'common/footer.html' />

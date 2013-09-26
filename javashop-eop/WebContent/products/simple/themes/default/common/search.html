@@ -1,0 +1,59 @@
+<!--搜索板块-->
+<div class="search">
+	<input type="text"  class="hunt"  id="keyword" type="text" value="请输入产品关键字，如品牌、型号等"  title="请输入产品关键字，如品牌、型号等" >
+	<input type="button" name="s_seek" class="s_seek" value="搜索" id="searchBtn">	
+</div>
+<!--搜索板块结束-->
+<!--搜索导航-->
+<div class="hot_keyword">
+	<h1>热门搜索：</h1>
+	<ul>
+		${widget_hot_keyword}
+		
+	</ul>
+</div>
+<!--搜索导航结束-->
+
+<script type="text/javascript">
+var searchTipText = "请输入产品关键字，如品牌、型号等";
+function search(){
+	var keyword = $.trim( $("#keyword").val());
+	if(keyword == searchTipText){
+		keyword = '';
+	}
+	if(keyword.indexOf('\\')!=-1){
+		alert("请输入正确的关键词");
+		return false;
+	}
+	if(keyword==''){
+		alert("请输入关键字");
+	}else{
+		keyword = keyword.replace(/\//g,"-xie-")
+		var url =  encodeURIComponent("search-keyword-"+keyword+".html");
+		location.href=url;
+	}
+}
+
+$(function(){	
+	$("#keyword").keypress(function(event){
+	//	$("#keyword").attr("class","seek");
+		if(event.keyCode=="13" ){
+			search();
+		}
+	});
+	$("#keyword").click(function(){
+		if($(this).val() == searchTipText){
+			$(this).val("");
+		}
+	});
+	$("#keyword").blur(function(){
+		if($(this).val() == ''){
+			$(this).val(searchTipText);
+		}
+	});
+	
+	$("#searchBtn").click(function(){
+		search();
+	});
+});
+</script>

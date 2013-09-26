@@ -1,0 +1,31 @@
+<div class="pointsSumm">
+	<h4>消费积分</h4>
+	<div class="overview">
+		<p class="layerCol">可用积分：<strong>${member.mp}</strong>冻结积分：<strong>${freezepoint}</strong></p>
+	</div>
+	
+	<h4>等级积分</h4>
+	<div class="overview">
+		<p class="layerCol">可用积分：<strong>${member.point}</strong>冻结积分：<strong>${freezemp}</strong></p>
+	</div>									
+
+	<h4>目前等级</h4>
+	<div class="currLevel">
+		<p>等级：<strong>${memberLv.name}</strong>等级积分：<strong>${memberLv.point!'0'}</strong></p>
+		<#if nextLv?exists>
+       <p class="prompt">您再获得<em>${nextLv.point - member.point}</em>积分，就可升级为<em>${nextLv.name}</em>，享受更优惠的折扣！</p>
+       </#if> 
+	</div> 
+	<h4>各等级所需积分</h4>
+	<ul class="needs">
+                                
+         <li>等级：<strong>普通会员 	</strong>所需积分：<em>0</em>可参与网站指定会员活动及新手体验专区优惠</li>
+     
+         <li>等级：<strong>黄金会员</strong>所需积分：<em>300</em>可参与网站指定会员活动，并可享受最低<b>9.8</b>折优惠</li>
+     
+         <li>等级：<strong>白金会员</strong>所需积分：<em>1200</em>可参与网站指定会员活动，并可享受最低<b>9.5</b>折优惠</li>
+     
+         <li>等级：<strong>钻石卡VIP会员</strong>所需积分：<em>5000</em>可参与网站指定会员活动，并可享受最低<b>9.2</b>折优惠</li>
+                                    
+	</ul>
+</div>

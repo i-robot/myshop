@@ -1,0 +1,42 @@
+<form action="member_returns_order.html?action=add" method="post" enctype="multipart/form-data" class="validate" >
+	<table cellspacing="0" cellpadding="0" width="100%" id="apply_for">
+		<tr>
+			<th >类型：</th>
+			<td>
+				<label><input value="1" name="type1" type="radio" checked="checked"/><span>退货</span></label>
+				<label><input value="2" name="type1" type="radio" /><span>换货</span></label></td></tr>
+	          
+		<tr>
+			<th >所属订单：</th>
+			<td><input type="text" isrequired="true" name="ordersn" class="input_text" />
+				</td></tr>
+		<tr>
+			<td></td><td><span class="prompt">一次只能输入一个订单号</span></td></tr>
+		<tr>
+			<th >商品货号：</th>
+			<td><input type="text" isrequired="true" name="goodsns" class="input_text" />
+			   
+				</td></tr>
+			<tr>
+			<td></td><td><span class="prompt">可输入多个，请用英文逗号,分开</span></td></tr>
+		<tr>
+			<th  >申请理由：</th>
+			<td><textarea name="applyreason" isrequired="true" cols="50" rows="5"></textarea>
+			
+			</td></tr>
+		<tr>
+			<th>上传照片：</th>
+			<td>
+				<div class="upfileWrapper">
+				<input type="file" name="pic" size="40" class="input_text" />
+				</div>
+			</td></tr>
+		<tr>
+			<td></td><td><span class="prompt">[ 上传图片可以让我们客服更好的了解您的申请情况，以便后续操作（图片不得大于300K） ]</span></td></tr>
+		<tr>
+			<td colspan="2" class="last">
+				<div class="btn"><input type="submit" name="submitBtn" value="提交申请"  class="yellow_btn" /></div>
+			</td>
+		</tr>
+	</table>
+</form>

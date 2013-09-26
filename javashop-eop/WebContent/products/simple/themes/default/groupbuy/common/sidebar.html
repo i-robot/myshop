@@ -1,0 +1,19 @@
+<div class="sidebox recommend-deals">
+	<h3>热门商品</h3>
+	<div class="sideinner">
+		<#list goodsList as goods>
+		<div class="deal">
+			<a target="_blank" title="${goods.name}" class="pic" href="${ctx}/goods-${goods.goods_id}.html" rel="nofollow">
+            	<img width="210" height="126" src="${goods.thumbnail_pic}" class="lazyloaded">
+			</a>
+			<h4>
+				<a target="_blank" title="${goods.name}" href="${ctx}/goods-${goods.goods_id}.html">${goods.name}</a>
+			</h4>
+			<div class="info">
+				<strong class="price">¥ ${goods.price}</strong> 原价<del>¥ ${goods.mktprice}</del>
+				<a hidefocus="true" target="_blank" title="去看看" class="see" href="${ctx}/goods-${goods.goods_id}.html" rel="nofollow">去看看</a>
+			</div>
+		</div>
+		</#list>
+	</div>
+</div>   

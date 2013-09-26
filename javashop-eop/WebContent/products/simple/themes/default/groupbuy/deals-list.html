@@ -1,0 +1,22 @@
+<ul class="deals-list cf">
+	<#list webpage.result as item>
+	<li class="<#if (item_index+1)%2 == 0>alt </#if><#if item_index <= 1>first</#if>">
+		<p class="time"><@dateformat time="${item.start_time*1000}" pattern="yyyy年M月dd日"/></p>
+		<h4><a target="_blank" title="${item.title}" href="${ctx}/groupbuy/deal-${item.groupid}.html">${item.title}</a></h4>
+		<div class="pic">
+			<div class="<#if item.end_time gte nowTime>isopen</#if>"></div>
+			<a target="_blank" title="${item.title}" href="${ctx}/groupbuy/deal-${item.groupid}.html" class="isopenlink">${item.title}</a><a target="_blank" title="${item.title}" href="${ctx}/groupbuy/deal-${item.groupid}.html">
+				<img width="200" height="121" src="${item.image}" alt="${item.title}">
+			</a>
+		</div>
+		<div class="info">
+			<p class="total"><strong class="count">${item.buycount}</strong>人购买</p>
+			<p class="price">原价：<strong class="old">¥${item.oldprice}</strong><br>折扣：<strong class="discount">${item.discount}折</strong><br>现价：<strong><span class="money">¥</span>${item.price}</strong><br>节省：<strong><span class="money">¥</span>${item.oldprice - item.price}</strong><br></p>
+		</div>
+	</li>
+	</#list>
+</ul>
+<div class="page-nav-wrapper">
+	<#assign searchpager = "com.enation.app.shop.component.groupbuy.widget.search.pager.SearchPagerDirectiveModel"?new()>
+	<@searchpager pageno="${webpage.currentPageNo}" pagesize="${webpage.pageSize}" totalcount="${webpage.totalCount}" />
+</div>

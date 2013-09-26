@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widgets>
+	
+	<page id="common">
+		<widget id="nav_menu">
+			<type>site_menu</type>
+			<custom_page>nav_menu</custom_page>
+			<folder>common</folder>
+		</widget>
+		 
+		<widget id="hot_keyword">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>1</catid>
+			<custom_page>hot_keyword</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="f1">
+			<type>staticDataList</type>
+			<count>3</count>
+			<catid>17</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="f2">
+			<type>staticDataList</type>
+			<count>3</count>
+			<catid>19</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="f3">
+			<type>staticDataList</type>
+			<count>3</count>
+			<catid>22</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="f4">
+			<type>staticDataList</type>
+			<count>3</count>
+			<catid>23</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="f5">
+			<type>staticDataList</type>
+			<count>3</count>
+			<catid>18</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="f6">
+			<type>staticDataList</type>
+			<count>3</count>
+			<catid>21</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+	</page>
+	
+	<page id="/index.html">
+		<widget id="adv1">
+			<type>advList</type>
+			<acid>1</acid>
+			<custom_page>adv1</custom_page>
+			<folder>index</folder>
+		</widget>		
+		<widget id="cat_menu">
+			<type>goods_cat</type>
+			<custom_page>cat_menu</custom_page>
+            <folder>common</folder>	
+		</widget>
+		<widget id="goods_list_1">
+			<type>goods_list</type>
+			<term>{catid:'1'}</term>
+			<setting>{type:'default'}</setting>
+			<custom_page>goods_list1</custom_page>
+            <folder>index</folder>	
+		</widget>
+		<widget id="hot">
+			<type>goodslist2</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<tagid>1</tagid>
+			<goodsnum>5</goodsnum>
+			<custom_page>hot</custom_page>
+			<folder>index</folder>
+		</widget>
+		<widget id="invisibility">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{catid:'56',tagid:'3'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:10,}</setting> <!--指定为默认配置-->
+			<custom_page>invisibility_list</custom_page>
+			<folder>index</folder>
+		</widget>
+
+		<widget id="cf">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{catid:'79',tagid:'3'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:10,}</setting> <!--指定为默认配置-->
+			<custom_page>invisibility_list</custom_page>
+			<folder>index</folder>
+		</widget>
+				
+		<widget id="indexshow">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{tagid:'2'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:4,}</setting> <!--指定为默认配置-->
+			<custom_page>indexshow</custom_page>
+			<folder>index</folder>
+		</widget>
+		<widget id="ad">
+			<type>advList</type>
+			<acid>1</acid>
+			<custom_page>adv</custom_page>
+			<folder>index</folder>
+		</widget>
+		<widget id="ad1">
+			<type>advList</type>
+			<acid>2</acid>
+			<custom_page>adv</custom_page>
+			<folder>index</folder>
+		</widget>
+		<widget id="ad2">
+			<type>advList</type>
+			<acid>3</acid>
+			<custom_page>adv</custom_page>
+			<folder>index</folder>
+		</widget>
+		<widget id="ad3">
+			<type>advList</type>
+			<acid>4</acid>
+			<custom_page>adv</custom_page>
+			<folder>index</folder>
+		</widget>
+	</page>
+
+	<page id="/goods.html">
+		
+		<!-- 声明商品详细主挂件，读取出商品基础数据 -->
+		<widget id="main">
+			<type>goods_detail_main</type>
+			<showhtml>false</showhtml> 
+		</widget>
+		
+		<!-- 商品相册 -->
+		<widget id="goods_gallery">
+			<type>goods_gallery</type>
+			<showhtml>false</showhtml> 
+		</widget>
+		
+		<widget id="vip_price">
+			<type>vip_price</type>
+			<showhtml>false</showhtml> 
+		</widget>
+		
+		<widget id="spec">
+			<type>goods_spec</type>
+			<showhtml>false</showhtml> 
+		</widget>
+		
+		<widget id="sns">
+			<type>goods_sns_share</type>
+			<ischild>yes</ischild>	
+		</widget>
+		
+		<!-- 商品详情挂件，使用自定义html，组合所有挂件 -->
+		<widget id="goods_detail">
+			<type>goods_detail</type>
+			<folder>detail</folder>
+			<custom_page>goods_detail</custom_page>
+		</widget>
+ 
+		<widget id="goods_props">
+			<type>goods_props</type>
+			<custom_page>props</custom_page>
+			<folder>goods</folder>
+		</widget>
+		<widget id="para">
+			<type>goods_params</type>
+			<custom_page>para</custom_page>
+			<folder>goods</folder>
+		</widget>
+		
+		<widget id="goods_intro">
+			<type>goods_intro</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="reco">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{catid:'6'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:5,}</setting> <!--指定为默认配置-->
+			<custom_page>reco</custom_page>
+			<folder>goods</folder>
+		</widget>
+		<widget id="av1">
+			<type>ad</type>
+			<acid>6</acid>
+		</widget>
+		<widget id="av2">
+			<type>ad</type>
+			<acid>5</acid>
+		</widget>
+	</page>	
+	
+	<page id="/goods_list.html">
+		<widget id="goodslist">
+		<type>goods_search2</type>
+		<folder>list</folder>
+		<custom_page>goods_search</custom_page>
+		</widget>
+
+		<widget id="av1">
+			<type>advList</type>
+			<acid>2</acid>
+			<custom_page>adv1</custom_page>
+			<folder>list</folder>
+		</widget>		
+		<widget id="av2">
+			<type>ad</type>
+			<acid>5</acid>
+		</widget>
+		<widget id="av3">
+			<type>ad</type>
+			<acid>5</acid>
+		</widget>
+		<widget id="av4">
+			<type>ad</type>
+			<acid>6</acid>
+		</widget>
+		<widget id="nav">
+			<type>search_nav</type>
+		</widget>
+		<widget id="recomm">
+			<type>goods_list</type>
+			<term>{tagid:'1'}</term>
+			<setting>{type:'default',goodsNum:5;order:7}</setting>
+			<custom_page>list_recomm</custom_page>
+			<folder>list</folder>
+		</widget>
+		<widget id="hot">
+			<type>goods_list</type>
+			<term>{order:'7'}</term>
+			<setting>{type:'default',goodsNum:5;order:7}</setting>
+			<custom_page>list_hot</custom_page>
+			<folder>list</folder>
+		</widget>
+		<widget id="visited">
+			<type>visited_goods</type>
+		</widget>
+	</page>
+
+
+	<page id="/cart.html">
+		<widget id="cart_crcomm">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{tagid:'1'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:5,}</setting> <!--指定为默认配置-->
+			<custom_page>cart_recomm</custom_page>
+			<folder>cart</folder>
+		</widget>
+	</page>
+	<page id="/help.html">
+		<widget id="h1">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>17</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="h2">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>19</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="h3">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>22</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="h4">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>23</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="h5">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>18</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="h6">
+			<type>staticDataList</type>
+			<count>10</count>
+			<catid>21</catid>
+			<custom_page>foothelp</custom_page>
+			<folder>common</folder>
+		</widget>
+		<widget id="help_right">
+			<type>dynamicDataDetail</type>
+			<custom_page>help_right</custom_page>
+			<folder>help</folder>
+		</widget>
+	</page>
+	<page id="order_detail.html">
+		<widget id="reco">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{catid:'6'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:5,}</setting> <!--指定为默认配置-->
+			<custom_page>reco</custom_page>
+			<folder>goods</folder>
+		</widget>
+		<widget id="av1">
+			<type>flashAdv</type>
+			<acid>2</acid>
+		</widget>
+		<widget id="av2">
+			<type>flashAdv</type>
+			<acid>3</acid>
+		</widget>
+	</page>
+	
+	<page id="/groupbuy/list.html">
+		<widget id="group_header">
+			<type>header</type>
+			<folder>groupbuy/common</folder>
+			<custom_page>header_script</custom_page>
+		</widget>
+		<widget id="change_city">
+			<type>groupBuyChangeCityWidget</type>
+		</widget>
+		<widget id="filter">
+			<type>groupBuyFilterWidget</type>
+		</widget>
+		<widget id="sort_bar">
+			<type>groupBuySortWidget</type>
+		</widget>
+		<widget id="list">
+			<type>groupBuyListWidget</type>
+			<pagesize>20</pagesize>
+		</widget>
+		<widget id="sidebar">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{catid:'6'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:5,}</setting> <!--指定为默认配置-->
+			<folder>groupbuy/common</folder>
+			<custom_page>sidebar</custom_page>
+		</widget>
+	</page>
+	
+	<page id="/groupbuy/deals.html">
+		<widget id="group_header">
+			<type>header</type>
+			<folder>groupbuy/common</folder>
+			<custom_page>header_script</custom_page>
+		</widget>
+		<widget id="change_city">
+			<type>groupBuyChangeCityWidget</type>
+		</widget>
+		<widget id="list">
+			<type>groupBuyListWidget</type>
+			<pagesize>20</pagesize>
+			<folder>groupbuy</folder>
+			<custom_page>deals-list</custom_page>
+		</widget>
+		<widget id="sidebar">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{catid:'6'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:5,}</setting> <!--指定为默认配置-->
+			<folder>groupbuy/common</folder>
+			<custom_page>sidebar</custom_page>
+		</widget>
+	</page>
+	
+	<page id="/groupbuy/deal.html">
+		<widget id="group_header">
+			<type>header</type>
+			<folder>groupbuy/common</folder>
+			<custom_page>header_script</custom_page>
+		</widget>
+		<widget id="change_city">
+			<type>groupBuyChangeCityWidget</type>
+		</widget>
+		<!-- 声明团购详细主挂件 -->
+		<widget id="main">
+			<type>groupBuyMainWidget</type>
+			<showhtml>false</showhtml> 
+		</widget>
+		<widget id="supplier">
+			<type>groupBuySupplierWidget</type>
+			<showhtml>false</showhtml> 
+		</widget>
+		
+		<widget id="share">
+			<type>groupBuyShareWidget</type>
+			<ischild>yes</ischild>
+		</widget>
+		<widget id="detail">
+			<type>groupBuyDetailWidget</type>
+		</widget>
+		<widget id="sidebar">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{catid:'6'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:5,}</setting> <!--指定为默认配置-->
+			<folder>groupbuy/common</folder>
+			<custom_page>sidebar</custom_page>
+		</widget>
+	</page>
+	
+	<page id="/groupbuy/city.html">
+		<widget id="group_header">
+			<type>header</type>
+			<folder>groupbuy/common</folder>
+			<custom_page>header_script</custom_page>
+		</widget>
+		<widget id="citieslist">
+			<type>groupBuyCityWidget</type>
+		</widget>
+	</page>
+	
+	<page id="/virtual_checkout.html">
+		<!-- 优惠卷 子挂件 -->
+		<widget id="coupon">
+			<type>couponWidget</type>
+			<folder>checkout</folder>
+			<custom_page>coupon</custom_page>
+			<ischild>yes</ischild>
+		</widget>		
+		<widget id="checkout">
+			<type>virtual_checkout</type>
+			<custom_page>virtual_checkout</custom_page>
+			<folder>checkout</folder>
+			<action name="showOrderTotal">checkout_total</action><!--指定获取价格模板-->		
+		</widget>
+	</page>
+	
+	<page id="/default.html">
+		<widget id="/cancel_order.html">
+			<type>member_order</type>		
+			<folder>member</folder>			
+			<action name="cancel">order_cancel</action>					
+		</widget>
+	</page>
+		
+</widgets>

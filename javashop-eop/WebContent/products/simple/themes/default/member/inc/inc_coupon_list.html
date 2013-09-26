@@ -1,0 +1,46 @@
+<#if couponsList?size gt 0 >
+<table cellspacing="0" cellpadding="0" width="100%">
+						<tr>
+							<th>优惠劵名称</th>
+							<th>获得时间</th>
+							<th>抵扣金额</th>
+							<th>订单最低额</th>
+							<th>失效时间</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+						<#list couponsList as coupons>
+						<tr>
+							<td><@substring title="${coupons.cpns_name}" length="20" dot="..." /> </td> 
+							<td><@dateformat time="${coupons.get_time*1000}" pattern="yyyy-MM-dd"/></td>
+							<td>${coupons.discount_price}</td>
+							<td>${coupons.goods_price}</td>
+							<td><@dateformat time="${coupons.end_time*1000}" pattern="yyyy-MM-dd"/></td>
+							<td style="color: green;">
+							<#if (coupons.end_time lt nowTime) > 已过期 </#if> 
+							<#if (coupons.end_time gte nowTime) > 
+								<#if coupons.used == 0>未使用</#if> 
+								<#if coupons.used == 1>已使用</#if>
+							</#if>
+							</td>
+							
+							<td class="oper">
+							<a class="deductionRange" value="${coupons.id}" href="javascript:;">抵扣范围</a>
+							 <#if (coupons.end_time gte nowTime) > 
+								 <#if coupons.used == 0>
+								  <a class="present" cid="${coupons.id}" href="javascript:;">赠送</a>
+								  </#if>
+							</#if>
+							</td>
+						</tr>
+						</tr>
+						</#list>
+
+</table>
+<div class="pager_border">
+<@pager pageno="${pageNo}" 	pagesize="${pageSize}" totalcount="${totalCount}" />
+<div class="clear"></div>
+</div>
+<#else>
+<div class="empty" >您目前还没有优惠劵</div>
+</#if>

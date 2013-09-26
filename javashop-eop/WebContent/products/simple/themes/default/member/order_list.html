@@ -1,0 +1,114 @@
+<#assign orderstatus= "com.enation.app.shop.core.taglib.OrderStatusDirectiveModel"?new()>
+<@script src="js/Order.js" />
+
+
+<div class="data">
+	<h2>我的订单</h2>
+</div>	 
+
+
+<!--温馨提示-->
+<div class="tip" >
+	<div class="top"></div>
+	<div class="body">
+		<@image src="images/gth.jpg" />
+		<div>
+			<h2>温馨提示</h2>
+			<p>1、这里会显示您更多的订单</p>
+			<p>2、您还可以进行查看订单详情、搜索已成功订单和取消订单等操作。</p>
+		</div>
+	</div>
+	<div class="bottom"></div>
+</div>
+
+<!--温馨提示结束-->
+
+<div id="search_wrapper">
+	<div class="tip">
+	<div class="top"></div>
+		<div class="body">
+		<table>
+				<tr>
+					<td class="label">搜索订单：</td>
+					<td class="input"><input class="inputText default" id="search_keyword" autocomplete="off" type="text" value="输入订单中商品关键词"/></td>
+					<td class="search"><input class="searOrderBtn" id="btnSearch" type="button" value="在订单中搜索"/></td>
+					<td id="searchR">搜索结果：<strong><#if keyword?exists>${totalCount}<#else>0</#if></strong>笔订单</td>
+				</tr>
+		</table>
+		</div>
+	<div class="bottom"></div>
+	</div>							
+</div>
+				
+<div class="tab">
+	<ul>
+				<li <#if !status?exists  && !keyword?exists >class="selected"</#if>><a href="member_order.html"><span>所有订单</span></a></li>						
+				<li <#if status?exists && status == ORDER_NOT_PAY>class="selected"</#if>><a href="member_order.html?status=0"><span>等待付款</span></a></li>
+				<li <#if status?exists && status == ORDER_PAY>class="selected"</#if>><a href="member_order.html?status=1"><span>已付款待确认</span></a></li>
+				<li <#if status?exists && status == ORDER_PAY_CONFIRM>class="selected"</#if>><a href="member_order.html?status=2"><span>已付款</span></a></li>
+				<li <#if status?exists && status == ORDER_ALLOCATION>class="selected"</#if>><a href="member_order.html?status=3"><span>配货中</span></a></li>
+				<li <#if status?exists && status == ORDER_SHIP>class="selected"</#if>><a href="member_order.html?status=5"><span>已发货</span></a></li>
+				<li <#if status?exists && status == ORDER_CANCELLATION>class="selected"</#if>><a href="member_order.html?status=8"><span>已取消</span></a></li>
+				<li <#if status?exists && status == ORDER_COMPLETE>class="selected"</#if>><a href="member_order.html?status=7"><span>已成功</span></a></li>
+				<li <#if keyword?exists>class="selected"</#if>><a href="javascript:;" id="searchtab" onclick="$('#btnSearch').click()"><span>搜索结果</span></a></li>
+	</ul>
+</div>
+<div class="box">				
+	<div class="top"></div>
+	<div class="body" >
+	<#include 'inc/inc_order_list.html' />
+	</div>
+	<div class="bottom"></div>
+</div>
+
+<div class="clear"></div>
+<div class="helper">
+	<h2>小贴士</h2>
+	<ul>
+		<li><a href="#">1、订单状态说明？</a></li>
+		<li><a href="#">2、我下了两张订单怎么合并订单？</a></li>
+		<li><a href="#">3、哪里可以查询到我的订单的详细动态？</a></li>
+	</ul>
+</div>
+
+
+
+<script>
+var searchTipText = "输入订单中商品关键词";
+function search(){
+	var keyword = $.trim($("#search_keyword").val());
+	if(keyword == searchTipText){
+		keyword = '';
+	}
+	if(keyword==''){
+		alert("请输入订单中商品关键词！");
+	}else{
+		location.href="member_order.html?keyword=" + keyword;
+	}
+}
+
+$(function(){	
+	$("#search_keyword").keypress(function(event){
+		$("#search_keyword").attr("class","inputText");
+		if(event.keyCode=="13" ){
+			search();
+		}
+	});
+	$("#search_keyword").click(function(){
+		if($(this).val() == searchTipText){
+			$(this).val("");
+		}
+	});
+	$("#search_keyword").blur(function(){
+		if($(this).val() == ''){
+			$(this).val(searchTipText);
+		}
+	});
+	
+	$("#btnSearch").click(function(){
+		search();
+	});
+	Order.init();	
+	
+});
+</script>

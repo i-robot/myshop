@@ -1,0 +1,40 @@
+<!--商品列表筛选下部筛选-->
+<div class="sort_wrapper">
+	<div class="select_box">
+		<h2>排序：</h2>
+			<select id="sort" >
+				<#if goodsSelector.sort?exists>
+					<#list goodsSelector.sort as selector>
+						<option value="${selector.url}" <#if selector.isSelected>selected="selected"</#if> >${selector.name}</option>
+					</#list>
+				</#if>
+			</select>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		$("#sort").change(function(){
+			location.href=this.value;
+		});
+	});
+	</script>
+	<div class="switch_box">
+		<ul>
+		 
+			<li class="way <#if sorter.price.selected>selected</#if>">
+				<a href="${sorter.price.url}" class="price_${sorter.price.sorttype}"><span>价格</span></a>
+			</li>
+			<li class="way <#if sorter.grade.selected>selected</#if>">
+				<a href="${sorter.grade.url}" class="grade_${sorter.grade.sorttype}"><span>评价</span></a>
+			</li>
+			<li class="way <#if sorter.sales.selected>selected</#if>" >
+				<a href="${sorter.sales.url}" class="sales_${sorter.sales.sorttype}"><span>销量</span></a>
+			</li>
+			<li class="way last <#if sorter.time.selected>selected</#if>" >
+				<a href="${sorter.time.url}" class="time_${sorter.time.sorttype}"><span>上架时间</span></a>
+			</li>
+			 
+			
+		</ul>
+	</div>
+</div>
+<!--商品列表筛选下部筛选-->

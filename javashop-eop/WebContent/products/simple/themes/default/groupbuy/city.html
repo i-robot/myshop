@@ -1,0 +1,39 @@
+<#include 'common/header_city.html'/>
+<div class="bdw" id="bdw">
+	<div class="cf" id="bd">
+		<div class="choosecities">
+			<div class="hotcities">
+           		<h2>切换团购城市</h2>
+           	</div>
+			<div class="filter">
+           		<form action="${ctx}/widget?type=groupBuyCityWidget&action=change&ajax=yes" method="post" id="changeCity">
+               		<label>按省份选择：</label>
+					<#assign RegionSelect= "com.enation.app.base.component.widget.regions.RegionSelectDirective"?new()>
+					<@RegionSelect/>
+					<input type="hidden" name="action" value="change">
+					<input type="button" value="确定"  class="form-button" id="changeCityBtn">
+           		</form>
+       		</div>
+			${widget_citieslist}
+        </div>
+	</div> <!-- bd end -->
+</div> <!-- bdw end -->
+
+<script type="text/javascript">
+$("#changeCityBtn").click(function(){
+    var city_id = $("#city_id").val();
+    if(!city_id || city_id==0) {
+        alert("请选择城市！");
+        return;
+    }
+    var options={
+		dataType:"json",		
+		success:function(result){
+		    window.location = "${ctx}/groupbuy/list.html"
+		}
+	}
+	$("#changeCity").ajaxSubmit(options);	
+});
+</script>	
+
+<#include 'common/footer.html'/>

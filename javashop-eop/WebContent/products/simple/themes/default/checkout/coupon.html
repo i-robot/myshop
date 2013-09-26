@@ -1,0 +1,119 @@
+<div id="coupon_wrapper">
+	<#if !isLogin>
+		您尚未登录，不能使用优惠券。
+	<#else>
+		<div class="used_box" >
+			<#if coupon?exists >
+				<#include 'used_coupon.html' />
+			</#if>
+		</div>
+		<div class="sel_box" <#if coupon?exists >style="display:none"</#if>>
+			<span >
+			<#if couponList?exists >
+			<select id="couponSel">
+				<option value="">请选择</option>
+				<#list couponList as coupon>
+					<option value="${coupon.cpns_sn}">${coupon.cpns_name}</option>
+				</#list>
+			</select>
+			<#else>
+			您没有可用的优惠券
+			</#if>
+			</span> <input type="text"  id="cpns_sn"  style="width:200px"/> <input type="button" value="确认" class="useBtn" />
+		</div>
+	</#if>
+</div>
+<script>
+
+var Coupon ={
+	init:function(){
+
+		var self = this;
+		$("#couponSel").change(function(){
+			var sn = $(this).val();
+			$("#cpns_sn").val(sn);
+			
+		});
+		$("#coupon_wrapper .useBtn").click(function(){
+			self.useCoupon();	
+		});
+		
+		self.bindCancelEvent();
+		 
+	}, 
+	/**
+	打开选择优惠券对话框 
+	**/
+	openSelCouDlg:function(){
+		 
+	},
+	
+	/**
+	使用优惠券
+	**/
+	useCoupon:function(){
+		var self= this;
+		var sn = $("#cpns_sn").val();
+		if($.trim(sn)==''){
+			alert("请输入优惠券号");
+			return ;
+		}
+		$.ajax({
+			url:"widget.do?type=couponWidget&ajax=yes&action=useCoupon&coupCode="+sn+"&rmd="+new Date().getTime(),
+			dataType:"json",
+			success:function(result){
+				if(result.result==1){
+					self.getUsedCoupon();
+					self.refreshPrice();
+				}
+				else{
+					alert(result.message);
+				}
+			},
+			error:function(){
+				alert("出错了:(");
+			}
+		});			
+	},
+	cancelCoupon:function(){
+		var self= this;
+		$.ajax({
+			url:"widget.do?type=couponWidget&ajax=yes&action=cancelCoupon&rmd="+new Date().getTime(),
+			dataType:"json",
+			success:function(result){
+				if(result.result==1){
+					$("#coupon_wrapper .sel_box").show();
+					$("#coupon_wrapper .used_box").hide()
+					self.refreshPrice();
+				}
+				else{
+					alert(result.message);
+				}
+			},
+			error:function(){
+				alert("出错了:(");
+			}
+		});	
+	},
+	getUsedCoupon:function(){
+		var self = this;
+		$("#coupon_wrapper .sel_box").hide();
+		$("#coupon_wrapper .used_box").show().load("checkout.html?widgetid=coupon&ajax=yes&action=getUsedCoupon&rmd="+new Date().getTime(),function(){
+			self.bindCancelEvent();
+		});
+	},
+	bindCancelEvent:function(){
+		var self = this;
+		$("#coupon_wrapper .cancelBtn").click(function(){
+			self.cancelCoupon();
+		});
+	},
+	refreshPrice:function(){
+		CheckOut.loadOrderTotal();
+	}
+};
+
+$(function(){	
+	Coupon.init();
+});
+</script>

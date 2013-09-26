@@ -1,0 +1,19 @@
+<div id="coup_range">
+
+	<li ><b>券号：</b><#if mc_sn?exists> ${mc_sn}</#if></li>
+	<li  style="width: 411px;">
+	<span>该促销券使用范围：</span><#if iscommon ><b>全场通用	</b></#if>
+	</li>
+	<#if !iscommon >
+	<li>
+		<#if catList?exists> 
+				<#list catList as cat>
+				<div style="width: 375px; float: right; text-align: left;">
+					<span> ${cat} </span>
+				</div> 
+				</#list> 
+		 
+		</#if>
+	</li>
+	</#if>
+</div>

@@ -1,0 +1,43 @@
+<#include 'common/header.html' />
+<@css src="css/goods_list.css" />
+
+	 
+	 <div id="goods_list_wrapper">
+			<!--商品列表左侧-->
+			<div class="gl_left">
+				<!--上部图片和当前位置-->
+				<div class="gl_pic">
+					${widget_av1}
+				</div>
+				<div class="nav">
+					<span class="float b">您的当前位置：</span>${widget_nav}
+				</div>
+				<!--上部图片和当前位置结束-->
+				${widget_goodslist}
+				<!--商品列表左侧结束-->
+			</div>
+			<!--商品列表结束-->
+			<!--商品列表右侧推荐商品-->
+			<div class="goods_list_box">
+				<div class="commend">
+					<h1><span></span>推荐商品</h1>
+					${widget_recomm}
+				</div>
+				<div class="hot">
+					<h1><span></span>热卖排行榜</h1>
+					${widget_hot}
+				</div>
+				<div class="hot">
+					<h1><span></span>最近浏览</h1>
+					${widget_visited}
+				</div>
+				<div class="gl_adv">
+					${widget_av2}
+					${widget_av3}
+					${widget_av4}
+				</div>
+			</div>
+			<!--商品列表右侧推荐商品结束-->
+	</div> 
+
+<#include 'common/footer.html'/>

@@ -1,0 +1,29 @@
+<h1>订单号：<span>${order.sn}</span></h1> <h2>订单状态:<span><@orderstatus status="${order.status}" type="order" /></span></h2>
+
+<#if order.status == ORDER_NOT_PAY ||  order.status==ORDER_SHIP || order.status==ORDER_ROG>
+<div class="button">
+
+	<#if order.status == ORDER_NOT_PAY>
+		<#if !order.isCod >
+			<#if order.isOnlinePay >
+				<span class="btn"><a href="orderpay.html?sn=${order.sn}" class="green_btn">按此为订单付款</a></span>
+			<#else>
+				<span class="btn"><a href="orderpay.html?sn=${order.sn}" class="green_btn">提交凭证</a></span>
+			</#if>
+		</#if> 
+		<span class="btn"><a href="javascript:;" sn="${order.sn}" class="yellow_btn cancelBtn">取消订单</a></span>		
+	</#if>
+	
+	<#if  order.status==ORDER_SHIP>
+		<span class="btn"><a href="javascript:;"    orderid="${order.order_id}" class="green_btn rogBtn">确认收货</a></span>
+	</#if> 
+	
+	<#if  order.status==ORDER_ROG>
+	<#if isLogin>
+		<span class="btn"><a href="javascript:;"    orderid="${order.order_id}" class="green_btn thawBtn">解冻</a></span>
+		
+	</#if>	
+	</#if> 
+	
+</div>
+</#if>

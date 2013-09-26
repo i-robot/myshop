@@ -1,0 +1,125 @@
+<#assign regionSelect = "com.enation.app.base.component.widget.regions.RegionSelectDirective"?new()>
+<@script src="js/ui.datepicker.js" />
+<@script src="js/DatePicker.js" />
+<@css src="css/datepicker.css" />
+<div class="data">
+	<h2>完善基本资料</h2>
+</div>	
+ 
+ <div class="form_wrap white_box">
+<div class="box" >
+	<div class="top" ></div>
+	<div class="body">
+ 
+<form  id="form_saveMember" action="member_info.html?action=save" method="post"  class="validate" enctype="multipart/form-data" >
+
+							<table width="100%" cellspacing="0" cellpadding="0" class="perfection">
+								<tr>
+									<th >注册邮箱：</th>
+									<td class="email"><span class="def"><span id="lbEmail">${member.email!''}</span></span></td>
+									<th class="nickname">用户名：</th>
+									<td><span class="def"><span id="lbNickName">${member.uname!''}</span></span></td></tr>
+								<tr>
+									<th >真实姓名：</th>
+									<td colspan="3" >
+										<input type="text" isrequired="true" name="member.name" value="${member.name!''}" class="input_text"/>
+										<p class="prompt">请务必填写您的真实姓名，以便出现问题时客服核对您的真实信息！</p></td>
+								</tr>
+								<tr>
+									<th >设置头像：</th>
+									<td colspan="3">
+										<div class="userico">
+											<#if member.face?exists && member.face != ''>
+											<img src="<@imgurl pic='${member.face}'/>" width="100"/>
+											<#else>
+											<@image src="images/default_face.jpg" width="100" height="100" />
+											</#if>
+											
+										</div>
+										<div class="uploadIco">
+											<h3 style="float:none;display:block;">从您的电脑中上传图片作为头像</h3>
+											<div class="file clearfix">
+											   <div class="ifUpfile"><input type="file" name="faceFile" class="input_text"/></div>    
+												<span id="imgS"></span></div><!--file end-->
+											<p class="prompt">(建议尺寸120*120像素，200k以内)</p><input name="txtIco" type="hidden" id="txtIco" value="/ajax/MImageHandler.ashx?d=ico\default.jpg" />
+										</div>
+									</td>
+								</tr>
+								<tr id="gender">
+									<th >性别：</th>
+									<td class="middle" colspan="3">
+										  <label class="gender"><input type="radio" <#if member.sex!=0>checked</#if> value="1" name="member.sex" /><span>男</span></label>
+							              <label class="gender" id="lgender"><input type="radio" value="0" <#if member.sex==0>checked</#if> name="member.sex" /><span>女</span></label></td></tr>
+								<tr>
+									<th >生日：</th>
+									<td colspan="3" class="birthday middle">
+									   <input  name="mybirthday" class="dateinput input_text"  readonly="true" type="text" <#if mybirthday??> value="${mybirthday?string("yyyy-MM-dd")}"</#if> title="格式：2010-05-01" dataType="date"   />						               
+									</td>
+								</tr>
+				 
+								<tr>
+									<th >居住地：</th>
+									<td colspan="3" class="choseAddr ">
+										<div class="select clearfix">
+											 <@regionSelect />
+										</div>
+									</td></tr>
+									
+								<tr>
+									<th >联系地址：</th>
+									<td colspan="3" class="birthday middle">
+									    <input name="member.address" type="text" value="${member.address!''}" class="input_text"/>						               
+									</td></tr>
+								<tr>
+								
+									<th >邮编：</th>
+									<td colspan="3" class="birthday middle">
+									    <input name="member.zip" type="text" value="${member.zip!''}" id="zipcode" class="input_text" >						               
+									</td></tr>
+								<tr>
+									<th class="label middle" >手机：</th>
+									<td colspan="3" ><input id="cellphone" name="member.mobile" type="text" value="${member.mobile!''}" class="input_text"/></td></tr>
+								<tr>
+									<th >固定电话：</th>
+									<td colspan="3"  >
+										<input id="tel" name="member.tel" type="text" class="input_text"/>
+										
+										<p class="prompt">手机与固定电话至少填写一项</p></td></tr>
+							</table>
+							<div class="mc-mdOper">
+								 <div class="btn"> <input type="submit" name="btnSubmit" value="保存资料" id="btnSubmit" class="yellow_btn" /></div>
+								
+								 
+								 <#if member.info_full == 0>
+									<span><span>即可获得<strong>20奖励积分</strong>！</span></span>
+								</#if>
+								 
+								
+							</div>
+			
+</form>				
+ 
+ 
+	</div>
+	<div class="bottom"></div>
+
+</div>
+</div>
+ 
+
+<script type="text/javascript">
+$(function(){
+	
+	<#if member.province_id?exists && member.city_id?exists && member.region_id?exists>
+	RegionsSelect.load(${member.province_id},${member.city_id},${member.region_id});
+	</#if>
+	//地区联动选择-选择最后一级（区）时自动设置邮编
+	RegionsSelect.regionChange=function(regionid,name,zipcode){
+		$("#zipcode").val(zipcode);
+	};
+
+});
+
+ 
+
+</script>					

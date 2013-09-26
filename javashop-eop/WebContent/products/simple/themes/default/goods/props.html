@@ -1,0 +1,23 @@
+				<div class="rer_para">
+					 
+<#if attrList?exists >
+<#if attrList?size&gt;0>
+<table cellspacing="0" cellpadding="0" width="100%" class="liststyle data">
+	<colgroup class="span-4 ColColorGray fontcolorBlack"></colgroup>
+	<tbody>
+		<tr>
+			<td class="colspan ColColorGraydark" colspan="2">商品属性<span
+				class="gname"></span></td>
+		</tr>
+			<#list attrList as attr>
+		<tr>
+			<th>${attr.name}：</th>
+			<td>${attr.valStr!'' }</td>
+		</tr>
+    </#list>
+			
+	</tbody>
+</table>
+</#if>
+</#if>
+				</div>

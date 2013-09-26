@@ -1,0 +1,17 @@
+<ul>
+	<#list dlyTypeList as dlyType> 
+	
+	<#if dlyType.name!="虚拟商品自动发货">
+		<li>
+			<label style="width: auto;">
+				<input type="radio" value="${dlyType.type_id}"  type_name="${dlyType.name}" name="typeId" style="cursor: pointer;" >${dlyType.name}
+			</label>
+			${dlyType.price?string("currency")}
+			<div class="detail">
+				${dlyType.detail!''}
+			</div>
+		</li>
+	</#if>
+	
+	</#list>
+</ul>

@@ -1,0 +1,36 @@
+<#assign children=cat_tree />
+<ul>
+<#list children as cat>
+ 
+<li <#if cat.hasChildren >class="haschild"</#if>><a href="search-cat-${cat.cat_id}.html" class="menu">${cat.name }</a>
+<#if cat.hasChildren  >
+	<div class="child">
+		<div class="top"></div>
+		<div class="con">
+			<ul class="inner_con">
+			
+				<#assign children2=cat.children />
+				
+				<#list children2 as cat2>
+				<li <#if !cat2_has_next>class="last"</#if> >
+					<h6> <a href="search-cat-${cat2.cat_id}.html">${cat2.name }:</a></h6>
+					<#if cat2.hasChildren  >
+					<ul>
+						<#assign children3=cat2.children />
+						<#list children3 as cat3>
+							<li><a href="search-cat-${cat3.cat_id}.html">${cat3.name }</a></li>
+						</#list>
+					</ul>
+					</#if>
+				</li>
+				</#list>
+				
+			</ul>
+		</div>
+		<div class="bottom"></div>
+	</div>
+</#if>
+</li>
+ 
+</#list>	
+</ul>

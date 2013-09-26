@@ -1,0 +1,27 @@
+<#if favoriteList?size gt 0 >
+<table cellspacing="0" cellpadding="3" class="liststyle" style="width:100%">								
+  <#list favoriteList as favorite>
+	    <tr class="hovertr">
+		<td class="checkbox">&nbsp;&nbsp;</td>
+		<td class="img"><a href="goods-${favorite.goods_id}.html" title="${favorite.name}" class="img">
+		<img src="<@GoodsPic pic='${favorite.image_default}' postfix='_thumbnail' />" alt="${favorite.name}" height="55" width="55"/></a></td>
+		<td class="param">
+			<dl>
+				<dt><a href="goods-${favorite.goods_id}.html">${favorite.name}</a></dt>
+				<dd>
+					<span>商品编号：${favorite.sn}</span>
+					</dd>
+				<dd>销售价：<strong>￥${favorite.price?string("0.##")}</strong></dd></dl>
+		</td>
+		<td class="oper"> <a onclick="javascript:return confirm('确认删除吗？');" href="member_favorite.html?action=delete&favorite_id=${favorite.favorite_id}">删除</a></td></tr>
+	    </#list>
+	    
+	    
+</table>
+ <div class="pager_border">
+<@pager pageno="${page}" pagesize="${pageSize}" totalcount="${totalCount}" />
+<div class="clear"></div>
+</div>
+<#else>
+<div class="empty" >您尚未收藏任何商品</div>
+</#if>

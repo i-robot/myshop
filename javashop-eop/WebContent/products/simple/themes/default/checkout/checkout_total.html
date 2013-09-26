@@ -1,0 +1,24 @@
+<ul>
+	<li>
+		<h2>商品价格总计：</h2>
+		<p>${orderPrice.goodsPrice?string("currency")}</p>
+	</li>
+	<li>
+		<h2>运费总计：</h2>
+		<p>${orderPrice.shippingPrice?string("currency")}</p>
+	</li>
+	<#if orderPrice.discountItem.couponPrice?exists >
+	<li>
+		<h2 >优惠券抵扣：</h2>
+		<p>${orderPrice.discountItem.couponPrice?string("currency")}</p>
+	</li>
+	</#if>	
+	<li>
+		<h2>订单获得积分：</h2>
+		<p>${orderPrice.point!0}</p>
+	</li>
+	<li>
+		<h3>订单总价：</h3>
+		<h4>${orderPrice.orderPrice?string("currency")}</h4>
+	</li>
+</ul>

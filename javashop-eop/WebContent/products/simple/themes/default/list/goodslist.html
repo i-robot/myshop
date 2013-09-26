@@ -1,0 +1,20 @@
+		
+		
+<div >
+	<ul>
+		<#list webpage.result as goods> 
+			<li>
+				<div >
+					<a href="goods-${goods.goods_id}.html"><@image alt="${goods.name}" title="${goods.name}" src="<@GoodsPic pic='${goods.image_default}' postfix='_thumbnail' />" /></a>
+				</div>
+				<div ">
+					<p><a href="goods-${goods.goods_id}.html">${goods.name}</a></p>
+					<p><span >${goods.price?string.currency}</span> 元</p>
+					 
+				</div>
+			</li>
+		</#list>
+	</ul>
+</div>
+分页稍候再做
+		

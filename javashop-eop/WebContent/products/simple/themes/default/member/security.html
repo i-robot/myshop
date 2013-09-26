@@ -1,0 +1,68 @@
+<div class="data">
+	<h2>我的收获地址</h2>
+</div>	
+
+<!--温馨提示-->
+<div class="tip">
+	<div class="top"></div>
+	<div class="body">
+		<@image src="images/gth.jpg" />
+	
+		<div>
+			<h2>温馨提示</h2>
+			<p>1、密码只能为6--16个英文字母或数字</p>
+			<p>2、为了您的账号安全，必须正确输入旧密码才能修改。</p>
+		</div>
+	</div>
+	<div class="bottom"></div>
+</div>
+<!--温馨提示结束-->
+
+<div class="form_wrap white_box" style="margin-top:20px">
+<div class="box" >
+	<div class="top"></div>
+	<div class="body">
+	<form class="validate" action="member_security.html?action=save" method="post">
+	<table cellspacing="0" cellpadding="0" border="0" >
+		<tr>
+			<th>旧的密码：</th>
+			<td><input type="password" name="oldpassword" dataType="string"	isrequired="true" class="input_text"  fun="isPasswd" />
+	                    </td></tr>
+		<tr>
+			<th>新的密码：</th>
+			<td><input type="password" name="password" dataType="string" id="password" isrequired="true" class="input_text" fun="isPasswd" />
+	                     </td></tr>
+		<tr>
+			<th>确认新密码：</th>
+			<td><input class="input_text" type="password" name="passwd_re" dataType="string" id="passwd_re"	isrequired="true" fun='checkpwd'/>
+	                    </td></tr>
+		<tr>
+			<td colspan="2" style="padding-left:100px">										
+				 <div class="btn"><input type="submit" name="btnReg" value="确定修改" class="yellow_btn" /></div> 
+			</td></tr>
+	</table>
+ </form>
+	</div>
+	<div class="bottom"></div>
+
+</div>
+</div>
+<script type="text/javascript">
+ 
+
+function checkpwd(){    
+	if( $("#passwd_re").val()==$("#password").val() ){
+		return true;
+	}
+	else{ 
+		return "密码不一致";
+	}
+}
+
+function isPasswd(s){  
+	//var patrn=/^(\w){6,20}$/;
+	var patrn=/^(\w){6,16}$/;
+	if (!patrn.exec(s)) return "密码格式不正确"  
+	return true  
+}
+</script>				

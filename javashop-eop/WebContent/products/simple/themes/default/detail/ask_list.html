@@ -1,0 +1,76 @@
+<div  class="grade_list">
+
+<#if page.totalCount != 0 >
+<ul >
+
+<#list page.result as comment>  
+	<li <#if !comment_has_next >class="last"</#if>>
+		<div class="problem_pic">
+		
+        	<#if comment.member_id != 0 && comment.face?exists>
+        		<#if comment.sex == 0 && comment.face == "">
+        			<@image src="images/ntx.jpg" alt="默认头像"/>
+        		<#elseif comment.sex == 1  && comment.face == "">
+        			<@image src="images/ntx.jpg" alt="默认头像"/>
+        		<#else>
+        			<@image src="${comment.face}" width="65"/>
+        		</#if>
+        	<#else>
+        		<@image src="images/ntx.jpg" alt="默认头像"/>
+        	</#if>
+		<span class="name"> 
+		     <#if comment.member_id != 0>
+            	${comment.uname!''}
+            <#else>
+            	匿名
+            </#if>
+         </span>
+		 
+  <#if comment.levelname?exists>
+          
+          <h2>  		 <#if comment.levelname?exists>
+            <span class="lv">
+ 
+            ${comment.levelname!''}
+            
+            </span>
+         </#if></h2>
+            </#if>
+		</div>
+		
+
+
+          
+            
+		<div class="problem_right">
+			<div class="problem_time">
+		 
+				<span><@dateformat time="${comment.dateline?c}" pattern="yyyy-MM-dd HH:mm"/></span>
+			</div>
+			<p>${comment.content!''}</p>
+			<#if comment.img?exists && comment.img != ''>
+                        <div class="suolue"><a href="<@imgurl pic='${comment.img}'   />" target="_blank"> <@image src="${comment.img}"  width="150"/> </a></div>
+            </#if>
+			 <#if comment.replystatus==1>
+			<div class="problem_answer">
+				<div class="pa_top"></div>
+				<div class="ps_bottom">
+					<h3>${site.sitename}客服：</h3>
+					<p>${comment.reply}</p>
+				</div>
+			</div>
+			</#if>
+		</div>
+	</li>
+</#list>
+ 
+</ul>
+
+<#else>
+	 暂无评论，抢沙发，赢取更多积分。 
+</#if>
+
+
+</div>
+<@ajaxpager pageno="${pageNo}" pagesize="${pageSize}" totalcount="${page.totalCount}" />
+<div class="clear"></div>

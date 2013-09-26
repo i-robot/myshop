@@ -1,0 +1,28 @@
+<#if pointHistoryList?size gt 0 >
+<table  style="width:100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<th  >时间</th>
+		<th  >明细</th>
+		<th  >等级积分</th>
+		<th  >消费积分</th>
+		</tr>
+	    <#list pointHistoryList as pointHistory>
+	        <tr >
+		        <td><@dateformat time="${pointHistory.time?c}" pattern="yyyy-MM-dd HH:mm"/></td>
+		        <td >
+		        ${pointHistory.reason!''}
+		        </td>
+		        
+		        <td><span class="status-gain">${pointHistory.point}</span></span></td>
+				<td><span class="status-gain">${pointHistory.mp}</span></span></td>
+		   
+		      </tr>
+	    </#list>    
+</table>
+<div class="pager_border">
+<@pager pageno="${pageNo}" 	pagesize="${pageSize}" totalcount="${totalCount}" />
+<div class="clear"></div>
+</div>
+<#else>
+<div class="empty" >您目前还没有积分记录</div>
+</#if>

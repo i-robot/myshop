@@ -1,0 +1,32 @@
+		<table  cellspacing="0" cellpadding="0" width="100%">
+			<thead>
+				<tr>
+					<th>图片</th>
+					<th>商品名称</th>
+					<th>商品积分</th>
+					<th>价格</th>
+					<th>数量</th>
+					<th>小计</th>
+				</tr>
+			</thead>
+			<tbody>
+				<#list orderItemsList as item>
+				<tr>
+				<td>
+					<a target="_blank" href="goods-${item.goods_id}.html">
+						<span style="display: block; height: 50px;" class="cart-product-img">
+							<@image height="50" src="${item.image}"  postfix='_thumbnail'  style="cursor: pointer;" />
+						</span>
+					</a>				
+				</td>
+					<td><a target="_blank" href="goods-${item.goods_id}.html">${item.name}</a>				
+					${item.other!''}						
+					</td>
+					<td>${item.gainedpoint}&nbsp;</td>
+					<td>${item.price?string.currency}</td>
+					<td>${item.num}</td>
+					<td>${(item.num * item.price)?string.currency}</td>
+				</tr>
+				</#list>
+			</tbody>
+		</table>

@@ -1,0 +1,32 @@
+
+<#if goodsList?exists &&  goodsList?size gt 0>
+<#list goodsList as item>
+<div class="item" itemid="${item.id}">
+	<dl>
+		<dt class="img">
+			<a target="_blank" href="goods-${item.goods_id}.html">
+				<img   alt="${item.name}" src="<@GoodsPic pic='${item.image_default}' postfix='_thumbnail' />">
+			</a>
+		</dt>
+		<dd class="name">
+			<a href="goods-${item.goods_id}.html">${item.name}</a>
+			<#if item.others?exists>
+				<#if item.others.specList?exists>
+				<span><#list item.others.specList as spec><#if spec_index!=0>,</#if>${spec.name}:<em style="color:#ED7108">${spec.value}</em></#list></span>
+				</#if>
+			</#if>
+		</dd>
+		<dd class="extra">
+			<strong>${item.coupPrice?string("currency")}×${item.num}</strong><br>
+			<a href="javascript:;" itemid="${item.id}" class="delete">删除</a>
+		</dd>
+	</dl>
+</div>
+<#if item_has_next>
+<div class="dashed_line"></div>
+</#if>
+</#list>
+<#else>
+	<p>您的购物车中还没有任何商品</p>
+</#if>
+<!-- <div class="clear"></div> -->

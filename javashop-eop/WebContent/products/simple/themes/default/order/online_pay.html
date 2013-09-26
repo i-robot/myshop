@@ -1,0 +1,91 @@
+<form method="post" action="pay_to_${order.payment_type}.html" target="_blank" id="f_order_pay">
+
+<input type="hidden" name="orderid" value="${order.order_id}" /> 
+<input type="hidden" name="paymentid" id="paymentid" value="${order.payment_id}" />
+
+
+					<div class="pay_pattern">
+						<ul>
+							<li>
+								<strong>在线支付</strong>
+							</li>
+						</ul>
+					</div>
+					<div class="pay_bank">
+					<div>
+						<h2>选择支付方式</h2>
+						<ul>
+							<li>
+								<input type="radio" name="paymethod" class="sex" value="1"/>
+								<@image src="images/1.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="paymethod" class="sex" value="2"/>
+								<@image src="images/2.jpg" alt="银行选择支付宝" />
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2>选择网上银行</h2>
+						<ul>
+							<li>
+								<input type="radio" name="bank" class="sex" value="CCB"/>
+								<@image src="images/3.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value="ICBCB2C"/>
+								<@image src="images/4.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value="COMM"/>
+								<@image src="images/5.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value="CMBC"/>
+								<@image src="images/6.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value=""/>
+								<@image src="images/7.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value=""/>
+								<@image src="images/8.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value=""/>
+								<@image src="images/9.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value=""/>
+								<@image src="images/10.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value=""/>
+								<@image src="images/11.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value=""/>
+								<@image src="images/12.jpg" alt="银行选择支付宝" />
+							</li>
+							<li>
+								<input type="radio" name="bank" class="sex" value=""/>
+								<@image src="images/13.jpg" alt="银行选择支付宝" />
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="pay_go btn">
+					<input type="submit" value="立刻付款"  class="yellow_btn" >
+				</div>
+
+</form>
+<script type="text/javascript">
+<!--
+$(function(){
+	$("[name=paymethod]").click(function(){
+		$("#paymentid").val(this.value);
+	});
+})
+//-->
+</script>

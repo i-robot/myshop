@@ -1,0 +1,35 @@
+<#assign orderstatus= "com.enation.app.shop.core.taglib.OrderStatusDirectiveModel"?new()>
+
+<div class="data">
+	<h2>我的收货地址</h2>
+</div>	
+<!--温馨提示-->
+<div class="tip">
+<div class="top"></div>
+<div class="body">
+	<@image src="images/gth.jpg"/>
+
+	<div>
+		<h2>温馨提示</h2>
+		<p>1、这里将显示您的收货地址信息</p>
+		<p>2、您还可以管理您的收货地址簿、增加新的收货地址等操作。</p>
+	</div>
+</div>
+<div class="bottom"></div>
+</div>
+<!--温馨提示结束-->
+
+
+<div class="tab">
+<ul >
+	<li class="selected"><a href="member_address.html"><span>收货地址管理</span></a></li>
+	<li><a href="member_address.html?action=add"><span>新增收货地址</span></a></li>
+</ul>
+</div>
+<div class="box">
+<div class="top"></div>
+<div class="body">
+<#include 'inc/inc_address_list.html' />
+</div>
+<div class="bottom"></div>
+</div>

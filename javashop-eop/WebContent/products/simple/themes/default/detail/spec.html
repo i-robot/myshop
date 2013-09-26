@@ -1,0 +1,82 @@
+<script type="text/javascript">
+<!--
+var Products=
+	[
+	<#list productList as product>	
+	  {'product_id':${product.product_id},'goods_id':${product.goods_id},'sn':'${product.sn}','store':${product.store},
+		'price':${product.price},
+	   'specs':${product.specsvIdJson}
+	  }
+	  <#if product_has_next >,</#if>
+	</#list>
+	];
+	$(function(){
+		Eop.Spec.init(1);
+		
+	});
+//-->
+</script>
+
+<input type="hidden" value="1" name="havespec" />
+<div class="goods-spec" id="goods-spec">
+<h4 class="spec-tip"></h4>
+<#list specList as spec>
+<table width="100%" class="spec-item">
+	<tbody>
+		<tr>
+			<td style="width: 10%; white-space: nowrap;"><span><em>${spec.spec_name}</em>：</span></td>
+			<td style="padding-left: 15px;">
+ 			<ul>
+ 				
+			<#list spec.valueList as val  >
+			 
+				<#if spec.spec_type==0>
+				<li>
+					<a specid="${spec.spec_id}" specvid="${val.spec_value_id}"  href="javascript:;" class="" title="${val.spec_value}">
+					<span><nobr>${val.spec_value}</nobr></span><i>&nbsp;</i>
+					</a>
+				</li>
+				</#if>
+				<#if spec.spec_type==1>
+				<li>
+					<a specid="${spec.spec_id}" specvid="${val.spec_value_id}"  href="javascript:;" class="" title="${val.spec_value}" >
+					<@image height="30" width="30" title="${val.spec_value}" alt="${val.spec_value}" src="${val.spec_image}" />
+					<i title="${val.spec_value}">&nbsp;</i> 
+					</a>
+				</li>
+				</#if>				
+			</#list>
+
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</#list>
+</div>
+
+<div class="rer_quantity" style="margin-top:5px;margin-bottom:0">
+	<label>订购数量：</label>
+	<div class="Numinput" id="num"></div>								
+</div>
+
+<div class="btn_box" style="margin-top:5px;">
+	
+		<input type="hidden" name="productid" id="productid"  />		
+		<input type="hidden" name="action" value="add" />
+		  
+		<div class="btn">
+			<input type="button" class="yellow_btn gnotifybtn" value="缺货登记" <#if goods.store gt 0>style="display:none"</#if> 	goodsid="${goods.goods_id}"/>	
+		</div>
+			
+		<div class="btn">			
+			<input type="submit" class="buynow_btn" value="立即购买"   <#if goods.store ==  0  >style="display:none"</#if>/>			
+		</div>
+		
+		<div class="btn">
+			<input type="button"  class="addtocart_btn" value="加入购物车"  id="addbutton" <#if goods.store ==  0 || (goods.isvirtual?exists &&goods.isvirtual==1) >style="display:none"</#if>/>	
+		</div>
+ 
+</div>
+
+

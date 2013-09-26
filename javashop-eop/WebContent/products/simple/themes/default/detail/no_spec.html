@@ -1,0 +1,28 @@
+<div class="rer_quantity">
+	<label>订购数量：</label>
+	<div class="Numinput" id="num"></div>								
+</div>
+
+<div class="btn_box">
+
+	
+		<input type="hidden" name="productid" value="${goods.goods_id}" />
+		<input type="hidden" name="itemtype" value="4" />
+		<input type="hidden" name="action" value="add" />
+		 
+		<#if goods.store==0> 
+		<div class="btn">
+			<input type="button" class="yellow_btn gnotifybtn" value="缺货登记"   goodsid="${goods.goods_id}"/>
+		</div>	
+		<#else>	
+		
+			<div class="btn">					
+				<input type="submit" class="buynow_btn" value="立即购买"  />	
+			</div>
+			
+			<div class="btn">
+			<input type="button"  class="addtocart_btn" value="加入购物车"  id="addbutton" <#if goods.isvirtual?exists &&goods.isvirtual==1 >style="display:none"</#if> />	
+			</div>
+		</#if> 	
+	
+</div>

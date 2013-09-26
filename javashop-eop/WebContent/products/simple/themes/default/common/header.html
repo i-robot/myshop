@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+${widget_header}
+
+<@css src="css/common.css"  iscommon="true"/>
+<@css src="css/button.css"  iscommon="true"/>
+<@css src="css/dialog.css"  iscommon="true"/>
+
+ 
+<@script src="js/shop.js" compress="true"   iscommon="true"/>
+<@script src="js/CartBar.js" compress="true" iscommon="true"/>
+<@script src="js/LoginDialog.js" compress="true" iscommon="true"/>
+<@script src="js/DropDownMenu.js" compress="true" iscommon="true"/>
+<@script src="js/ui.datepicker.js" compress="true" iscommon="true"/>
+<@script src="js/DatePicker.js" compress="true" iscommon="true"/>
+
+
+<script  >
+$(function(){
+	$('#nav_menu>ul>li').dropDownMenu({child:'.child'});
+	
+});
+</script>
+
+</head><body>
+<div id="hreder">
+	<div class="login_bar">
+		${widget_login_bar}
+	</div>	
+	<div class="util_bar">
+		<ul>
+			<!--购物车下拉菜单-->
+			<li id="cart_bar_wrapper" class="first">
+				<a href="cart.html">购物车(<span class="num">0</span>)件</a>
+				<div class="content" style="display:none" >
+					<div class="border">
+					</div>
+					<div class="cart_list" >
+						<img class="loading" src='themes/default/images/ajax-loader.gif'/>						
+					</div>					
+				</div>
+			</li>
+			<!--购物车下拉菜单结束-->
+			<li><a href="searchorder.html">游客订单查询</a></li>
+			<li ><a href="#">帮助中心</a></li>
+			<li class="phone">400-400-4000</li>
+		</ul>
+	</div>
+	
+<div class="clear"></div>	
+</div>
+
+	<!--页面logo、信息-->
+	<div id="banner">
+		<!--logo-->
+		<div class="logo">
+			<@image src="${site.logofile!''}" title="logo"/>
+			
+		</div>
+		<!--logo结束-->
+		<!--承诺、优惠-->
+		<div class="promise">
+			<@image src="images/sycn.jpg" alt="承诺图片"/>
+		</div>
+		<!--承诺、优惠结束-->
+	</div>
+	<!--页面logo、信息结束-->
+	<!--导航-->
+	<div id="nav_menu">
+		 ${widget_nav_menu}
+	</div>
+	<!--导航结束-->
+	<!--搜索-->
+	<div id="search_bar">
+		<#include 'search.html' />		 
+	</div>
+	
+
+	
+
+
+

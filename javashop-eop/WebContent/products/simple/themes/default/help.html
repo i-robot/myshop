@@ -1,0 +1,44 @@
+<#include 'common/header.html' />
+<@css src="css/help.css" />
+	<!--正文-->
+	<div id="main">
+		<!--帮助中心图标-->
+		<div class="aid">
+			<@image src="images/bzzx.jpg" alt="帮助中心图标" />
+		</div>
+		<!--帮助中心图标结束-->
+		<!--帮助中心左侧帮助导航-->
+		<div class="a_left">
+			<div>
+				<h1>新手上路</h1>
+				${widget_h1}
+			</div>
+			<div>
+				<h1>支付方式</h1>
+				${widget_h2}
+			</div>
+			<div>
+						<h1>配送</h1>
+						${widget_h3}
+					</div>
+			<div>
+						<h1>售后</h1>
+						${widget_h4}
+					</div>
+					<div>
+						<h1>帮助</h1>
+						${widget_h5}
+					</div>
+					<div>
+						<h1>关于我们</h1>
+						${widget_h6}
+					</div>
+		</div>
+		<!--帮助中心左侧帮助导航结束-->
+		<!--帮助中心右侧详细讲解-->
+		<div class="a_right">
+			${widget_help_right}
+		</div>
+		
+	</div>
+	<#include 'common/footer.html' />

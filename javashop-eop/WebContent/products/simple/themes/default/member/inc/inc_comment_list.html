@@ -1,0 +1,54 @@
+<#if commentsList?size gt 0 >
+<table id="tblComm" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<th class="title">评论商品</th>
+		<th class="date">提交时间</th>
+		<th class="status">状态</th>
+	</tr>
+	<#list commentsList as comment>
+	<tr>
+		<td class="title"><span><a	href="goods-${comment.goods_id}.html#discuss_wrapper" target="_blank">${comment.name}</a>
+		</span>
+		</td>
+		<td class="date"><@dateformat time="${comment.dateline?c}" pattern="yy-MM-dd HH:mm"/></td>
+		<td class="status"><span> <#if comment.status == 1> <span
+				class="status-used">审核通过</span> <#elseif comment.status == 2> <span
+				class="status-expired">审核拒绝</span> <#else> <span
+				class="status-virgin">待审核</span> </#if> </span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<div class="myComm">
+				<div class="myRating">
+					评分：<strong>${comment.grade}</strong>
+				</div>
+				<div class="commContent">${comment.content}</div>
+				<#if comment.img?exists && comment.img != ''>
+				<div class="userImg">
+					<p>
+						<a href="<@imgurl pic='${comment.img}' postfix='' />"
+							target="_blank"><img
+							src="<@imgurl pic='${comment.img}' postfix='' />" width="150" />
+						</a>
+					</p>
+				</div>
+				</#if>
+				
+				 <#if comment.replystatus == 1>
+				<div class="aidaiReply">
+					<p>${comment.reply}</p>
+				</div>
+				</#if>
+			</div></td>
+	</tr>
+	</#list>
+
+</table>
+<div class="pager_border">
+<@pager pageno="${page}" pagesize="${pageSize}" totalcount="${totalCount}" />
+<div class="clear"></div>
+</div>
+<#else>
+<div class="empty" >您尚未评价过商品</div>
+</#if>

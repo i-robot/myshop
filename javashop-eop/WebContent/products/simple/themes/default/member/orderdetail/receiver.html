@@ -1,0 +1,70 @@
+		<table cellspacing="0" cellpadding="0" width="100%">
+			<tbody>
+					<tr>
+						<th>收货人信息</th>
+						<td>
+							<ul>
+								<li>
+									<label>收货地址:</label>
+									<span>${order.shipping_area!''}-${order.ship_addr!''}</span>
+								</li>							
+								<li>
+									<label>收货人:</label>
+									<span>${order.ship_name!''}</span>
+								</li>
+								
+								<#if order.ship_mobile?exists && order.ship_mobile != ''>
+									<li>
+										<label>手机:</label>
+										<span>${order.ship_mobile!''}</span>
+									</li>
+								</#if>
+								
+								<#if order.ship_tel?exists && order.ship_tel != ''>
+								<li>
+									<label>联系电话:</label>
+									<span>${order.ship_tel!''}</span>
+								</li>
+								</#if>
+								
+								<li>
+									<label>邮编:</label>
+									<span>${order.ship_zip!''}</span>
+								</li>
+
+							</ul>
+						</td>
+					</tr>
+
+					<tr>
+						<th>配送方式:</th>
+						<td>${order.shipping_type!''}
+						
+						<#if order.ship_status gt 2 >
+							<#list deliveryList as delivery>
+								<#if delivery.type ==1 && delivery.logi_no?exists ><p>发货，物流公司：${delivery.logi_name!''},运单号：${delivery.logi_no!''}<a href="javascript:void();" onclick="javascrpt:showRogInfo('${delivery.logi_no!''}','${delivery.logi_code!''}');return false;">查询货运状态</a></p></#if>
+								<#if delivery.type ==2 && delivery.logi_no?exists ><p>退货，物流公司：${delivery.logi_name!''},运单号：${delivery.logi_no!''}<a href="javascript:void();" onclick="javascrpt:showRogInfo('${delivery.logi_no!''}','${delivery.logi_code!''}');return false;">查询货运状态</a></p></#if>
+								<#if delivery.type ==3 && delivery.logi_no?exists ><p>换货，物流公司：${delivery.logi_name!''},运单号：${delivery.logi_no!''}<a href="javascript:void();" onclick="javascrpt:showRogInfo('${delivery.logi_no!''}','${delivery.logi_code!''}');return false;">查询货运状态</a></p></#if>
+							</#list>
+						</#if>
+										
+										
+						</td>
+					</tr>
+					<tr>
+						<th>付款方式:</th>
+						<td>${order.payment_name!''}</td>
+					</tr>
+					<tr>
+						<th>订单附言:</th>
+						<td>${order.remark!''}</td>
+					</tr>
+					
+										
+					<tr>
+						<th>送货时间:</th>
+						<td>${order.ship_day!''}&nbsp;${order.ship_time!''}</td>
+					</tr>
+
+			</tbody>
+		</table>

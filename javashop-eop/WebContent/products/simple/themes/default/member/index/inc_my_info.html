@@ -1,0 +1,58 @@
+			<div class="inner_con">
+					<div class="portrait">
+
+						<div class="userico">
+						<#if member.face?exists && member.face != ''>
+			        		<img src="<@imgurl pic='${member.face}'/>" width="120" height="120"/>
+			        	<#else>
+				        	<@image src="images/default_face.jpg" width="120" height="120" />
+				        </#if>
+						</div>
+						<a class="uploadIco" href="member_info.html">上传会员头像</a>
+					</div>
+					<dl class="baseStat">
+						<dt>您好，<strong>${member.uname!''}</strong>，欢迎回来！</dt>
+						<dd>
+							<span>会员编号：<em>${90000000+member.member_id}</em></span>
+						</dd>
+						<dd>
+							<span>等级：<em>${member.lvname!''}</em><a href="help-3-38.html" target="_blank">[如何升级]</a></span>
+							<span>等级积分：<em>${member.point}</em></span>
+						</dd>
+						<dd>
+
+							<span style=" margin-right:3px;">消费积分：<em>${member.mp}</em></span>
+							<span style=" margin-right:9px;"><a href="help-3-40.html" title="关于消费积分"><@image src="images/member_what_tp_03.png"/></a></span>
+							<span style=" margin-right:3px;">冻结消费积分：<em>${freezepoint!0}</em><!--<a href="javascript:void();" id="beforeFreeze" style=" margin-left:5px;text-decoration:underline;">提前解冻</a></span>
+							<span style=" margin-right:9px;"><a href="help-3-40.html#a1" title="您可以提前解冻被冻结的积分，但与被解冻积分相关的订单商品，将不能进行退换货操作。"><@image src="images/member_what_tp_03.png"/></a>--></span>
+						</dd>
+
+						<dd id="member_tip4" flag="none" style=" display:none;">
+						<span class="member_tip"></span>
+						<span class="member_tip2">您可以提前解冻被冻结的积分，但与被解冻积分的相关订单会置为完成状态，将不能进行退换货操作。<a href="member_order.html?status=6" style=" color:#2875C2;">我要去解冻</a></span>
+						<span class="member_tip3"></span>
+						</dd>
+						<dd style=" z-index:1; position: inherit; float:left;">
+							<span>邮箱：<em class="email">${member.email}</em><a class="strong" href=""></a></span>
+						</dd>
+						<dd class="noborder">
+							<span>购物礼券：<em>${wel.couponNum}</em>张</span>
+							<span>抵用金额：<em>${wel.couponprice}</em>元</span>
+						</dd>
+					</dl>
+
+					<div class="myLinks">
+						<div class="cr_admonishtop"></div>
+						<span class="mlTop"></span>
+						<div class="mlInner">
+							<ul class="clearfix">
+								<li class="lnk1"><a href="member_comments.html"><strong>${discussTotal}</strong>条评论消息</a></li>
+								<li class="lnk2"><a href="member_order.html?status=0"><strong>${orderPage.totalCount}</strong>个待处理订单</a></li>
+								<li class="lnk3"><a href="member_ask.html"><em>${askTotal}</em>条咨询回复</a></li>
+								<li class="lnk4"><a href="member_favorite.html"><strong>${favoriteTotal}</strong>个收藏商品</a></li>
+							</ul>
+						</div>
+						<span class="mlBtm"></span>
+						<div class="cr_admonishbottom"></div>
+					</div>
+				</div>

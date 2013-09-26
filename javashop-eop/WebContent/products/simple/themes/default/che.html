@@ -1,0 +1,396 @@
+		<div id="checkout_wrapper">
+			<!--提示信息-->
+			<div class="pay_warm">请确认以下信息，然后提交订单</div>
+			<!--提示信息结束-->
+			<!--主要内容-->
+			<div class="pay_frame">
+				<!--收货人常态-->
+				<div class="box address">
+					<h2>收获人信息<a href="javascript:;"><span>[修改]</span></a></h2>
+					<p>王峰，中国，北京，北京市，昌平区，天通苑东二区一号楼7单元301室，100085，137100298765。</p>
+				</div>
+				<!--收货人常态结束-->
+				<!--收货人修改-->
+				<div class="box address modify">
+					<h2>收货人信息<a href="javascript:;"><span>[关闭]</span></a></h2>
+					<ul>
+						<li>
+							<input type="radio" name="sex" class="sex" value=""/>
+							<p>王峰，中国，北京，北京市，昌平区，天通苑东二区一号楼7单元301室，100085，137100298765。<a href="#">修改</a></p>
+						</li>
+						<li>
+							<input type="radio" name="sex" class="sex" value=""/>
+							<p>使用新地址</p>
+						</li>
+					</ul>
+				</div>
+				<!--收货人修改结束-->
+				<!--新建收货人信息-->
+				<div class="box address new">
+					<div>
+						<label>收货人：</label>
+						<input type="text" name="pay_small" class="pay_small" value=""/>
+					</div>
+					<div class="pay_district">
+						<label>地区：</label>
+						<ul class="pay_local">
+							<li>
+								<div class="house">
+									<span>中国</span>
+									<ul>
+										<li><a href="#">加拿大</a></li>
+										<li><a href="#">加拿大</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="house">
+									<span>中国</span>
+									<ul>
+										<li><a href="#">加拿大</a></li>
+										<li><a href="#">加拿大</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="house">
+									<span>中国</span>
+									<ul>
+										<li><a href="#">加拿大</a></li>
+										<li><a href="#">加拿大</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="house">
+									<span>中国</span>
+									<ul>
+										<li><a href="#">加拿大</a></li>
+										<li><a href="#">加拿大</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+						<p><a href="#">查看可到货付款地区</a></p>
+					</div>
+					<div class="pay_big">
+						<label>街道地址：</label>
+						<input type="text" name="pay_big" class="pay_big" value=""/>
+					</div>
+					<div>
+						<label>邮编：</label>
+						<input type="text" name="pay_small" class="pay_small" value=""/>
+					</div>
+					<div class="pay_phone">
+						<label>手机：</label>
+						<input type="text" name="pay_small" class="pay_small" value=""/>
+						<b>或者是固定电话：</b>
+						<input type="text" name="pay_small" class="pay_small" value=""/>
+					</div>
+					<div class="pay_botton">
+						<a href="#">确认收获人信息</a>
+					</div>
+				</div>
+				<!--新建收货人信息结束-->
+				<!--送货方式常态-->
+				<div class="box shipping">
+					<h2>送货方式<a href="javascript:;"><span>[修改]</span></a></h2>
+					<p>普通快递送货上门，周一至周五。周末休息</p>
+				</div>
+				<!--送货方式常态结束-->
+				<!--送货方式修改-->
+				<div class="box shipping modify">
+					<h2>送货方式<span>[修改]</span></h2>
+					<ul class="send_fashion">
+						<li>
+							<input type="radio" name="sex" class="sex" value=""/>
+							<div><p>普通快递送货上门(支持货到付款)</p><span>5元(购物满29元免运费)</span></div>
+						</li>
+						<li>
+							<input type="radio" name="sex" class="sex" value=""/>
+							<div><p>普通邮递(不支持货到付款)</p><span>5元(购物满29元免运费)</span></div>
+						</li>
+						<li>
+							<input type="radio" name="sex" class="sex" value=""/>
+							<div><p>邮政特快专递EMS(不支持货到付款)</p><span>订单金额的50%，最低20元</span></div>
+						</li>
+						<li>
+							<input type="radio" name="sex" class="sex" value=""/>
+							<div><p>自提</p><span>免运费</span></div>
+						</li>
+					</ul>
+					<div class="send_time">
+						<h2>送货上门时间：</h2>
+						<div>
+							<a href="#"><span>周一至周五</span></a>
+							<ul>
+								<li><a href="#">周一至周二</a></li>
+								<li><a href="#">周一至周二</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="pay_botton">
+						<a href="#">确认收获人信息</a>
+					</div>
+				</div>
+				<!--送货方式修改结束-->
+				<!--付款方式常态-->
+				<div class="box payment">
+					<h2>付款方式<a href="javascript:;"><span>[修改]</span></a></h2>
+					<p>货到付款。</p>
+				</div>
+				<!--付款方式常态结束-->
+				<!--付款方式修改-->
+				<div class="payment modify">
+					<h2>付款方式<a href="javascript:;"><span>[关闭]</span></a></h2>
+					<ul>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。<span>使用网上支付，您将获得积分奖励：10分</span></p>
+								<@image src="images/wszf.jpg" alt="网上银行图片"/>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+							</div>
+						</li>
+					</ul>
+					<div class="pay_botton"><a href="#">确认付款方式</a></div>
+				</div>
+				<div class="payment modify">
+					<h2>付款方式<a href="javascript:;"><span>[关闭]</span></a></h2>
+					<ul>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。<span>使用网上支付，您将获得积分奖励：10分</span></p>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+								<h3>请您在汇款单的“请按汇款种类中填写”中选择“商务汇款”，商户客户号：1254365645</h3>
+								<h3>同时要填写汇款金额、汇款人相关信息等</h3>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+							</div>
+						</li>
+					</ul>
+					<div class="pay_botton"><a href="#">确认付款方式</a></div>
+				</div>
+				<div class="payment modify">
+					<h2>付款方式<a href="javascript:;"><span>[关闭]</span></a></h2>
+					<ul>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。<span>使用网上支付，您将获得积分奖励：10分</span></p>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+							</div>
+						</li>
+						<li>
+							<input type="radio" value=""/>
+							<div class="describe">
+								<p><b>网上支付</b>您需要先拥有一张已开通网上支付功能的银行卡。</p>
+								<table>
+									<tr><th  colspan="5">您可以在任何一家银行向一下账户汇款，汇款时请务必在电汇单的用途栏内注明订单号。</th></tr>
+									<tr>
+										<td class="pay_td"><b>开户名</b></td>
+										<td colspan="4">北京当当科文电子商务有限公司</td>
+									</tr>
+									<tr>
+										<td><b>开户行</b></td>
+										<td>光大银行</td>
+										<td>光大银行</td>
+										<td>光大银行</td>
+										<td>光大银行</td>
+									</tr>
+									<tr>
+										<td class="pay_td"><b>帐号</b></td>
+										<td>9384579824376549328567</td>
+										<td>9384579824376549328567</td>
+										<td>9384579824376549328567</td>
+										<td>9384579824376549328567</td>
+									</tr>
+								</table>
+								<h5></h5>
+							</div>
+							
+						</li>
+					</ul>
+					<div class="pay_botton"><a href="#">确认付款方式</a></div>
+				</div>
+				<!--付款方式修改结束-->
+				<!--商品清单标题-->
+				<div class="mem_tittle">
+					<h2>商品清单</h2>
+					<div><h3>商家：预计美睛网预计1-2天送到</h3><span><a href="#">查看详情</a></span><a href="#">[返回修改购物车]</a></div>
+					<ul>
+						<li class="first">商品与规格</li>
+						<li>所在仓库</li>
+						<li>美睛价格</li>
+						<li>优惠</li>
+						<li>数量</li>
+						<li>小记</li>
+					</ul>
+				</div>
+				<!--商品清单表弟结束-->
+				<!--商品清单列表-->
+				<div class="mem_list">
+					<table>
+						<tr>
+							<td class="first">
+								<ul>
+									<li>克莱美隐形眼影</li>
+									<li><span>商品编号：46546465</span></li>
+									<li><b>度数：1.5</b></li>
+								</ul>
+							</td>
+							<td>北京</td>
+							<td>￥140</td>
+							<td>￥40</td>
+							<td>10</td>
+							<td>￥140</td>
+						</tr>
+						<tr>
+							<td class="first">
+								<ul>
+									<li>克莱美隐形眼影</li>
+								</ul>
+							</td>
+							<td>北京</td>
+							<td>￥140</td>
+							<td>￥40</td>
+							<td>10</td>
+							<td>￥140</td>
+						</tr>
+					</table>
+				</div>
+				<!--商品清单列表结束-->
+				<!--结算信息-->
+				<div class="order_total">
+					<div class="meta_wrapper">
+						<ul>
+							<li>
+								<h2><a href="#"></a>索取发票</h2>
+								<div class="pay_content">
+									<div class="pay_minutia">
+										<label>发票标题：</label>
+										<div class="pay_choose">
+											<input type="checkbox" name="pc_name" class="pc_name" vaule="">
+											<span>个人</span>
+										</div>
+										<div class="pay_choose">
+											<input type="checkbox" name="pc_name" class="pc_name" vaule="">
+											<span>单位</span>
+										</div>
+									</div>
+									<div class="pay_minutia">
+										<label>发票内容：</label>
+										<div class="pay_hide">
+											<span><a href="#">请选择</a></span>
+											<ul>
+												<li><a href="#">税务局</a></li>
+												<li><a href="#">税务局</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="pay_minutia">
+										<p>发票在您收到货15天后通过平邮寄出，请注意查收</p>
+									</div>
+									<div class="pay_minutia">
+										<h6>注：内容不全默认为不索取发票</h6>
+									</div>
+								</div>
+							</li>
+							<li>
+								<h2><a href="#"></a>使用购物礼券</h2>
+								<div class="pay_gift">
+									<p>选择我的礼券<span>输入礼券号：</span></p>
+									<input type="text" name="pc_name" class="pc_name" vaule="">
+									<a href="#">确认</a>
+								</div>
+							</li>
+							<li>
+								<h2><a href="#"></a>订单备注</h2>
+								<div class="pay_remarks">
+									<input type="text" name="pc_name" class="pc_name" vaule="">
+									<p>请勿填写有关支付／收货／发票方面的信息，如有特殊需要请联系客服人员。</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--订单总计-->
+					<div class="total_wrapper">
+						<ul>
+							<li>
+								<h2>商品价格总计：</h2>
+								<p>￥145</p>
+							</li>
+							<li>
+								<h2>运费总计：</h2>
+								<p>￥145</p>
+							</li>
+							<li>
+								<h2>优惠券低值：</h2>
+								<span>￥145</span>
+							</li>
+							<li>
+								<h2>订单获得积分：</h2>
+								<p>145</p>
+							</li>
+							<li>
+								<h3>订单总价：</h3>
+								<h4>￥445</h3>
+							</li>
+						</ul>
+					</div>
+					<!--订单总计结束-->
+					<!--提交订单-->
+					<div class="button_wrapper">
+						<p>请核对以上信息，点击“提交订单”即表示您同意接受<span>美睛网交易条款</span></p>
+						<a href="#">提交订单</a>
+					</div>
+					<!--提交订单结束-->
+				</div>
+				<!--结算信息结束-->
+			</div>
+			<!--主要内容结束-->
+		</div>

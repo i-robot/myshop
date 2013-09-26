@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widgets>
+ 	<!--
+	================================================================
+ 	公用挂件配置
+	================================================================
+	-->	
+	<page id="common">
+
+		<widget id="header">
+			<type>header</type>
+			<border>none</border>
+		</widget>
+		<widget id="login_bar">			
+			<type>member_login_bar</type>
+ 			<custom_page>login_bar</custom_page>
+			<folder>common</folder>
+			<ischild>yes</ischild>
+		</widget>
+	</page>
+
+	<!--
+	================================================================
+ 	注册页面配置
+	================================================================
+	-->		
+	<page id="/register.html">
+		<widget id="register">			
+			<type>member_register</type>
+ 			<custom_page>register</custom_page>
+			<folder>member</folder>
+		</widget>
+	</page>
+	
+ 
+	<!--
+	================================================================
+ 	登录页面配置
+	================================================================
+	-->	
+	<page id="/login.html">
+		<widget id="login">			
+			<type>member_login</type>
+ 			<custom_page>login</custom_page>
+ 			<action name="dialog">login_dialog</action>
+			<folder>member</folder>			
+		</widget>
+	</page>
+	
+	
+	<!--
+	================================================================
+ 	网店默认页面配置
+	================================================================
+	-->		
+	<page id="/default.html">
+		<widget id="/login_bar.html">			
+			<type>member_login_bar</type>
+ 			<custom_page>login_bar</custom_page>
+			<folder>common</folder> 
+		</widget>	
+		<widget id="/logout.html">			
+			<type>member_logout</type>
+		</widget>
+		<widget id="/memberemailcheck.html">
+			<type>member_email_check</type>
+		</widget>	
+		<widget id="/findpassword.html">
+			<type>member_findpassword</type>
+			<folder>member</folder>
+			<custom_page>find_password</custom_page>
+		</widget>
+		<widget id="/modifypassword.html">
+			<type>find_modify_password</type>
+			<folder>member</folder>
+			<custom_page>modify_password</custom_page>
+		</widget>
+			
+		<widget id="/orderpay.html">
+			<type>orderpay</type>
+		 	<folder>order</folder>
+			<custom_page>pay</custom_page>
+		</widget>
+		<widget id="/pay_(\w+)_(\w+).html">
+			<type>paywidget</type>
+		</widget>		
+		<widget id="/searchorder.html">
+			<type>searchorder</type>
+			<folder>order</folder>
+			<custom_page>order_search</custom_page>
+			<action name="search">order_search</action>
+		</widget>
+		<widget id="/raffleList.html">
+			<type>raffleListWidget</type>
+		</widget>
+		<widget id="/raffle-(\d+).html">
+			<type>raffleWidget</type>
+			<mustbelogin>yes</mustbelogin>
+		</widget>
+	</page>	
+	
+ 	<!--
+	================================================================
+ 	会员中心页面配置
+	================================================================
+	-->		
+	<page id="/member.html">
+
+			
+		<widget id="/member_index.html">
+			<type>member_index</type>
+			<folder>member</folder>
+			<custom_page>index</custom_page>
+			<mustbelogin>yes</mustbelogin>
+		</widget>
+		
+		<!-- 我的订单 -->
+		<widget id="/member_order.html">
+			<type>member_order</type>
+			<mustbelogin>yes</mustbelogin>
+			<folder>member</folder>
+			<action name="default">order_list</action>
+			<action name="cancel">order_cancel</action>					
+		</widget>
+
+		<!-- 发票显示挂件，只会在订单详细时执行 -->
+ 	 	<widget id="receipt">
+			<type>receiptWidget</type>
+			<folder>member</folder>
+			<custom_page>receipt</custom_page>
+			<ischild>yes</ischild>
+		</widget>
+		
+		<!-- 订单详情 -->		
+	 	<widget id="/member_orderdetail_(\d+).html">
+			<type>member_orderdetail</type>
+			<folder>member</folder>
+			<action name="default">order_detail</action>	
+			<mustbelogin>yes</mustbelogin>			
+		</widget>
+		
+		<!-- 我的收藏 -->		
+		<widget id="/member_favorite.html">
+			<type>member_favorite</type>
+			<folder>member</folder>
+			<custom_page>favorite</custom_page>
+			<mustbelogin>yes</mustbelogin>			
+		</widget>
+		
+		<!-- 缺货登记 -->	
+		<widget id="/member_gnotify.html">
+			<type>member_gnotify</type>
+			<folder>member</folder>
+			<custom_page>gnotify</custom_page>						
+			<mustbelogin>yes</mustbelogin>			
+		</widget>
+
+				
+		<widget id="/member_address.html">
+			<type>member_address</type>
+			<folder>member</folder>
+			<custom_page>address_list</custom_page>
+			<action name="add">address_add</action>	
+			<action name="edit">address_edit</action>
+			<mustbelogin>yes</mustbelogin>			
+		</widget>	
+		<widget id="/member_point.html">
+			<type>member_point</type>
+			<folder>member</folder>
+			<custom_page>point</custom_page>
+			<action name="list">point_list</action>	
+			<action name="freeze">point_freeze</action>			
+			<mustbelogin>yes</mustbelogin>			
+		</widget>	
+		<widget id="/member_security.html">
+			<type>member_security</type>
+			<folder>member</folder>
+			<custom_page>security</custom_page>
+			<mustbelogin>yes</mustbelogin>			
+		</widget>
+		<widget id="/member_comments.html">
+			<type>member_comments</type>
+			<folder>member</folder>
+			<custom_page>comment_list</custom_page>
+			<action name="goods">comment_goods</action>
+			<mustbelogin>yes</mustbelogin>			
+		</widget>
+		<widget id="/member_ask.html">
+			<type>member_ask</type>
+			<folder>member</folder>
+			<custom_page>ask_list</custom_page>
+			<mustbelogin>yes</mustbelogin>			
+		</widget>		
+		<!-- 我的优惠卷 -->
+		<widget id="/member_coupon.html">
+			<type>memberCouponWidget</type>
+			<folder>member</folder>
+			<custom_page>coupon_list</custom_page>
+			<action name="range_dlg">range_dlg</action>			
+			<mustbelogin>yes</mustbelogin>			
+		</widget>
+		
+		<!-- 退换申请 -->
+		<widget id="/member_returns_order.html">
+			<type>memberReturnsOrderWidget</type>
+			<folder>member</folder>
+			<action name="apply">returns_order_apply</action>
+			<action name="list">returns_order_list</action>
+			<action name="goodslist">returns_order_detail</action>
+			<mustbelogin>yes</mustbelogin>			
+		</widget>						
+		
+		<widget id="/member_info.html">
+			<type>member_info</type>
+			<folder>member</folder>
+			<custom_page>info</custom_page>		
+			<mustbelogin>yes</mustbelogin>			
+		</widget>
+			
+	</page>
+ 
+	
+	
+	<!--
+	================================================================
+ 	非会员订单详细
+	================================================================
+	-->	
+	<page id="/orderdetail.html">
+			<!-- 发票显示挂件，只会在订单详细时执行 -->
+ 	 	<widget id="receipt">
+			<type>receiptWidget</type>
+			<folder>member</folder>
+			<custom_page>receipt</custom_page>
+			<ischild>yes</ischild>
+		</widget>
+		
+		<widget id="order_detail">
+				<type>member_orderdetail</type>
+				<folder>member</folder>
+				<custom_page>order_detail</custom_page>	
+		</widget>
+		
+		<widget id="reco">
+			<type>goods_list</type> <!--对应挂件id，这里使用“商品列表挂件” -->
+			<term>{catid:'6'}</term> <!-- 指定显示分类id为1下面的商品-->
+			<setting>{type:'default',goodsNum:5,}</setting> <!--指定为默认配置-->
+			<custom_page>reco</custom_page>
+			<folder>goods</folder>
+		</widget>
+		<widget id="av1">
+			<type>flashAdv</type>
+			<acid>2</acid>
+		</widget>
+		<widget id="av2">
+			<type>flashAdv</type>
+			<acid>3</acid>
+		</widget>
+		
+		
+	</page>
+	
+ 
+	
+	
+	<!--
+	================================================================
+ 	购物车页面默认配置
+	1.使用cart文件夹
+	2.挂件id为cart
+	3.指定了相应action的页面，如有改动请在widgets.xml中覆写
+	4.此挂件负责了购车项的添加、删除、修改数量、计算价格、清空数据的操作
+	================================================================
+	-->	
+	<page id="/cart.html">
+		<widget id="cart">
+			<type>shop_cart</type>
+			<folder>cart</folder><!--指定模板文件夹-->
+			<custom_page>cart</custom_page>	<!--指定默认挂件模板-->			
+			<action name="getTotal">cartTotal</action>
+		</widget>		
+	</page>
+	
+
+	<!--
+	==============================================================
+ 	购物车bar页面默认配置
+	1.使用cart文件夹
+	2.挂件id为cart_bar
+	3.指定了相应showList action的页面，如有改动请在widgets.xml中覆写
+	==============================================================
+	-->	
+	<page id="/cart_bar.html">
+		<widget id="cart_bar">
+			<type>cart_bar</type>
+			<folder>cart</folder><!--指定模板文件夹-->
+			<action name="showList">bar_list</action><!--showList action的页面文件-->
+		</widget>		
+	</page>
+		
+		
+	<!--
+	============================================================
+ 	结算页面默认配置
+	1.使用checkout文件夹
+	2.挂件id为1
+	3.包含有地区连动下拉框挂件
+	4.含有优惠卷挂件
+	============================================================
+	-->
+	<page id="/checkout.html">
+	
+		<!-- 地区下拉框 子挂件 -->
+		<widget id="region_select">
+			<type>regionsSelect</type>
+			<ischild>yes</ischild>
+		</widget>
+		
+		<!-- 优惠卷 子挂件 -->
+		<widget id="coupon">
+			<type>couponWidget</type>
+			<folder>checkout</folder>
+			<custom_page>coupon</custom_page>
+			<ischild>yes</ischild>
+		</widget>	
+		<widget id="checkout">
+			<type>checkOutWidget2</type>
+			<folder>checkout</folder><!--指定模板文件夹-->
+			<custom_page>checkout</custom_page>	<!--指定默认挂件模板-->
+			<action name="shopPaymentList">payment_list</action><!--指定登录模板-->
+			<action name="loginBuy">loginBuy</action><!--指定登录模板-->
+			<action name="showOrderTotal">checkout_total</action><!--指定获取价格模板-->
+			<action name="showDlyType">dlytype_list</action><!--指定配送方式模板-->
+			<action name="finish">finish</action><!--指定结算完成模板-->			
+		</widget>
+	</page>
+	
+ 
+	
+	<!--
+	================================================================
+ 	商品评论页面配置
+	================================================================
+	-->		
+	<page id="/goods_comments.html">
+		<widget id="comment">
+			<type>comment</type>
+			<folder>detail</folder><!--指定模板文件夹-->
+			<action name="discuss_list">discuss_list</action><!--评价列表页-->
+			<action name="ask_list">ask_list</action><!--咨询列表页-->
+			<action name="discuss_form">discuss_form</action><!--评价输入表单-->
+			<action name="ask_form">ask_form</action><!--咨询输入表单-->
+		</widget>	
+	</page>	
+	
+ 
+	
+	
+ 	<page id="/headlogin.html">
+		<widget id="1">
+			<type>headLogin</type>
+		</widget>
+	</page>
+</widgets>

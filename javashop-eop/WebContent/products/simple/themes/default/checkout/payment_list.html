@@ -1,0 +1,12 @@
+<ul>
+	<#list paymentList as payment  >
+	<li>
+		<label>
+			<input type="radio"  value="${payment.id}"  payment_name="${payment.name}"  name="paymentId"  style="cursor: pointer;" <#if payment_index==0>checked</#if>>${payment.name}
+		</label>
+		<div class="biref" style="display:none">
+			${payment.biref!''}
+		</div>
+	</li>	
+	</#list>
+</ul>

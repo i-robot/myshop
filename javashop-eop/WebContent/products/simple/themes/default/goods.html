@@ -1,0 +1,118 @@
+<#include 'common/header.html' />
+<@css src="css/goods.css" />
+<@script src="js/magiczoom.js"  compress="false" />
+<@script src="js/jcarousellite_1.0.1.min.js" compress="false"  />
+<@script src="js/favorite.js"   />
+<@script src="js/jquery.numinput.js" />
+<@script src="js/Goods.js" />
+<@script src="js/Comment.js" />
+<@script src="js/spec.js"  />
+
+
+	<!--正文-->
+	<div id="goods_detail_wrapper">
+		<!--空白-->
+
+		<!--空白结束-->
+		<!--商品列表-->
+		<div class="good_list">
+			<!--商品列表左侧-->
+			<div class="gl_left">
+				
+				<div class="nav">
+					<span class="float b">您的当前位置：</span>${site.sitename}&gt;商品详情
+				</div>
+				
+				<!--客户咨询商品详细信息-->
+				${widget_goods_detail}
+				<!--客户咨询商品详细信息结束-->
+				<!--客户咨询商品详细列表下的表格商品介绍-->
+				<div class="rer_intro">
+					<h2>商品介绍</h2>
+				</div>
+				${widget_goods_props}
+				${widget_para}
+				<!--客户咨询商品详细列表下的表格商品介绍结束-->
+				<!--客户咨询商品详细商品详解文字介绍-->
+				<div class="rer_detail">
+					<h2></h2>
+					<h3>产品描述：</h3>
+					<p>${widget_goods_intro}</p>
+				</div>
+				<!--客户咨询商品详细商品详解文字介绍结束-->
+				
+				
+				<!--商品评论标签-->
+				<div id="comment_tab">
+					<ul>
+						<li class="selected discuss">商品评价</li>
+						<li class="ask">商品咨询</li>
+					</ul>
+				</div>
+				<!--商品评论标签结束-->
+				
+				
+				
+				<div id="discuss_wrapper">
+					<!--我的评论-->
+					<div id="discuss_list_wrapper">
+					</div>
+					<!--我的评论结束-->
+					
+	 
+					<!--发表评论-->				
+					<div id="discuss_form_wrapper"></div>
+					<!--发表评论结束-->
+				</div>
+				
+				
+				<div id="ask_wrapper" style="display:none">
+					<div class="ask_question">
+						<div> 
+						<h4>对该商品有任何疑问，您都可在此提问，我们会在最短的时间内给您回复</h4>
+						 <div class="btn"><a href="#askForm" class="blue_btn">我要咨询</a></div>
+						
+						</div>
+					</div>				
+					<!--商品咨询-->
+					<div id="ask_list_wrapper">
+					</div>
+					<!--商品咨询结束-->
+					
+	 
+					<!--商品咨询表单-->				
+					<div id="ask_form_wrapper"></div>
+					<!--商品咨询表单结束-->
+				</div>
+				
+								
+				
+				
+			</div>
+			
+			
+			<!--商品列表左侧结束-->
+			<!--商品列表右侧推荐商品-->
+			<div class="gl_right">
+				<div class="goods_list_box">
+					<div class="commend">
+						<h1><span></span>推荐商品</h1>
+						${widget_reco}
+					</div>
+					<div class="hot">
+						<h1><span></span>热卖排行榜</h1>
+						${widget_reco}
+					</div>
+					<div class="gl_adv">
+					${widget_av1} 
+					${widget_av2}
+					<a href="register.html"><@image src="images/huiyuan.jpg"  alt="商品列表右侧下部广告图片" /></a>
+					</div>
+				</div>
+
+			</div>
+			<!--商品列表右侧推荐商品结束-->
+		</div>
+		<!--商品列表结束-->
+	</div>
+		<#include 'common/footer.html'/>

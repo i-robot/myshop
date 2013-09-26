@@ -1,0 +1,42 @@
+<#assign orderstatus= "com.enation.app.shop.core.taglib.OrderStatusDirectiveModel"?new()>
+ 
+<!-- 基本资料  --> 
+<div class="white_box">
+	<div class="box" >
+		<div class="top"></div>
+		<div class="body">
+		 	<#include 'index/inc_my_info.html' />
+		</div>
+		<div class="bottom"></div>
+	</div>
+</div>
+
+<!-- 订单  -->
+<div class="box" id="myorder" style="margin-top:10px">
+	<div class="top"></div>
+	<div class="body">
+	  <#include 'index/inc_order.html' />
+	</div>
+	<div class="bottom"></div>
+</div>
+
+<div class="box"   style="margin-top:10px">
+	<div class="top"></div>
+	
+	<div class="body">
+	  <h1>推荐商品</h1>
+	<ul class="prodList">
+
+	<#list goodsList as goods>								 
+	<li>
+    <a class="img" target="_blank" href="goods-${goods.goods_id}.html" title="${goods.name}"><img src="<@imgurl pic='${goods.image_default}' postfix='_thumbnail' />" width="150" alt="" /></a>
+    <a class="title" target="_blank" href="goods-${goods.goods_id}.html" title="${goods.name}"><@substring title="${goods.name}" length="20" dot="..." /></a>
+ 	<span class="oPrice">市场价：<em>￥${goods.mktprice?string("0.##")}</em>元</span>  
+    <span class="price">售价:￥<strong>${goods.price?string("0.##")}</strong>元</span></li>
+    </#list>
+    <div class="clear"></div>
+	</ul>	  
+	</div>
+	<div class="bottom"></div>
+</div>
+		

@@ -1,0 +1,38 @@
+		<table cellspacing="0" cellpadding="0" border="0">
+			<tbody>
+				<tr>
+					<th>商品总金额:</th>
+					<td>${(order.goods_amount!0)?string.currency}</td>
+				</tr>
+				<tr>
+					<th>配送费用:</th>
+					<td>${(order.shipping_amount!0)?string.currency}</td>
+				</tr>
+				
+				<#if meta.couponprice?exists>
+				<tr>
+					<th>优惠卷抵扣:</th>
+					<td>${meta.couponprice}</td>
+				</tr>
+				</#if>
+				
+				
+				<tr>
+					<th>您可获得积分:</th>
+					<td>${order.gainedpoint!0}</td>
+				</tr>
+				<tr>
+					<th>优惠金额:</th>
+					<td class="discount_green">-${(order.discount!0)?string.currency}</td>
+				</tr>
+		
+				<tr>
+					<th>订单总金额:</th>
+					<td>${(order.order_amount!0)?string.currency}</td>
+				</tr>
+				<tr>
+					<th>已付金额:</th>
+					<td class="already_money">${(order.paymoney!0)?string.currency}</td>
+				</tr>
+			</tbody>
+		</table>

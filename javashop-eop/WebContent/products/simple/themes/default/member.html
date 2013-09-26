@@ -1,0 +1,69 @@
+<#include 'common/header.html' />
+<@css src="css/member.css" />
+	<!--正文-->
+
+		<div id="memeber_wrapper">
+
+		<!--会员中心首页左侧-->
+		<div id="menu_wrapper">
+				<!--会员中心圆形头部-->
+				<div class="round_header">
+				</div>
+				<!--会员中心圆形头部结束-->
+				<h1><a href="member_index.html">会员中心首页</a></h1>
+				<!--会员中心左侧会员缩略图-->
+				<div class="breviary">
+					<#if member?exists>
+						<#if member.face?exists && member.face != ''>
+						<img src="<@imgurl pic='${member.face}'/>"  alt="会员头像缩略图" />
+						<#else>
+						<@image src="images/hutx.jpg" alt="会员头像缩略图" />
+						</#if>
+					<div>
+						<h2>${member.name!''}</h2>
+						<p>会员等级：${member.lvname!''}</p>
+					</div>
+				 </#if>
+				</div>
+				<!--会员中心左侧会员缩略图结束-->
+				<!--会员中心左侧列表-->
+				<div class="inner_wrapper">
+					<#include 'member/menu.html' />	 
+				</div>
+				<!--会员中心左侧列表结束-->
+				<!--会员中心圆形底部-->
+				<div class="round_bottom">
+				</div>
+				<!--会员中心圆形底部结束-->
+			 
+		</div>	
+		<!--会员中心首页左侧结束-->
+		<!--会员中心首页右侧-->
+		
+		<div id="content_wrapper">
+			<div class="crew_right">
+			<div class="rr_header"></div>
+			<div class="conInner">
+				${widget_main!''}
+			</div>
+			<div class="rr_bottom"></div>
+			</div>
+		</div>
+		
+		
+		<!--会员中心首页右侧结束-->
+		</div>
+<script type="text/javascript">
+<!--
+$(function(){
+	$(".form_wrap .input_text,.form_wrap textarea").focus(function(){
+		$(this).addClass("focus");
+	});
+	$(".form_wrap .input_text, .form_wrap textarea").blur(function(){
+		$(this).removeClass("focus");
+	});	
+});
+//-->
+</script>
+		<#include 'common/footer.html'/>
+		

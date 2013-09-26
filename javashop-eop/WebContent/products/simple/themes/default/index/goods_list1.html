@@ -1,0 +1,9 @@
+<div>  
+	<ul>  
+	<#list goodsList as goods>  
+		   <li>
+		   <@image src="${goods.thumbnail_pic}" />
+		   名称:<a href="goods-${goods.goods_id}.html">${goods.name}</a>--价格：${goods.price}</li>  
+	</#list>  
+	</ul>  
+</div>  

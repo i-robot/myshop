@@ -1,0 +1,27 @@
+<div class="top_space"></div>
+<div class="tip_wrap">
+	
+	<div class="success">
+		<div class="pic"></div>
+		<div class="content">
+			<h1><#if msg?exists >${msg}</#if></h1>
+			
+			<#if urls?exists >
+			<ol>
+				<#list urls?keys  as itemKey>
+					<#if itemKey?exists >
+						<#assign url = urls[itemKey]>
+						<li><a href="${url}">${itemKey}</a></li>
+					</#if>
+				</#list>
+			</ol>
+			</#if>
+			<p><a class="jumpurl" href="<#if jumpurl?exists >${jumpurl}<#else>javascript:history.back();</#if>">3秒后系统会自动跳转，也可点击本处直接跳转</a></p>
+		</div>
+	</div>
+	
+</div>
+
+<script> 
+	document.write("<meta http-equiv='refresh' content='3;url=<#if jumpurl?exists >${jumpurl}<#else>" + document.referrer + "</#if>'>");
+</script>

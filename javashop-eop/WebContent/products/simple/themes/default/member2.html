@@ -1,0 +1,239 @@
+<#include 'common/header.html' />
+	<!--页面logo、信息-->
+	<div id="symbol">
+		<!--logo-->
+		<div class="logo">
+		</div>
+		<!--logo结束-->
+		<!--承诺、优惠-->
+		<div class="promise">
+			<@image src="images/sycn.jpg" alt="承诺图片" />
+		</div>
+		<!--承诺、优惠结束-->
+	</div>
+	<!--页面logo、信息结束-->
+	<!--导航-->
+	<div id="nav">
+		<ul>
+			<li class="first"><a href="#">商城首页<em></em></a></li>
+			<li><a href="#">隐形眼睛<span></span></a></li>
+			<li class="selected"><a href="#">框架眼睛<span></span></a></li>
+			<li><a href="#">功能眼睛<span></span></a></li>
+			<li><a href="#">护理液<span></span></a></li>
+			<li><a href="#">特价专区<span></span></a></li>
+			<li><a href="#">团购专区<span></span></a></li>
+			<li><a href="#">限时抢购<span></span></a></li>
+			<li class="last"><a href="#">在线试戴<em></em></a></li>
+		</ul>
+	</div>
+	<!--导航结束-->
+	<!--搜索-->
+	<div id="seek">
+		<!--搜索导航-->
+		<div class="seek_tittle">
+			<h1>热门搜索：</h1>
+			<ul>
+				<li><a href="#">强生美瞳</a></li>
+				<li><a href="#">强生美瞳</a></li>
+				<li><a href="#">强生美瞳</a></li>
+				<li><a href="#">月抛</a></li>
+				<li><a href="#">强生美瞳</a></li>
+				<li><a href="#">暴龙眼镜季抛</a></li>
+				<li><a href="#">强生美瞳</a></li>
+			</ul>
+		</div>
+		<!--搜索导航结束-->
+	</div>
+	<!--搜索结束-->
+	<!--正文-->
+	<div id="main">
+		<!--空白-->
+		<div class="m_blank">
+		</div>
+		<!--空白结束-->
+		<!--会员中心首页左侧-->
+		<div id="menu_wrapper">
+			<div class="crew_left">
+				<!--会员中心圆形头部-->
+				<div class="round_header">
+				</div>
+				<!--会员中心圆形头部结束-->
+				<h1>会员中心首页</h1>
+				<!--会员中心左侧会员缩略图-->
+				<div class="breviary">
+					<@image src="images/hutx.jpg" alt="会员头像缩略图">
+					<div>
+						<h2>princewhj</h2>
+						<p>会员等级：普通会员</p>
+					</div>
+				</div>
+				<!--会员中心左侧会员缩略图结束-->
+				<!--会员中心左侧列表-->
+				<div id="menu_wrapper">
+					<#include 'member/menu.html' />	 
+				</div>
+				<!--会员中心左侧列表结束-->
+				<!--会员中心圆形底部-->
+				<div class="round_bottom">
+				</div>
+				<!--会员中心圆形底部结束-->
+			</div>
+		</div>	
+		<!--会员中心首页左侧结束-->
+		<!--会员中心首页右侧-->
+		<div id="content_wrapper">
+			<div class="crew_right">
+				<div class="rr_header"></div>
+				<!--右侧正文-->
+				<div class="cr_all">
+					<!--会员、提示-->
+					<div class="cr_blanktop"></div>
+					<div class="cr_remind">
+						<div class="cr_informa">
+							<div class="portrait">
+								<@image src="images/htdtx.jpg" alt="会员大头像" />
+								<p>上传会员头像</p>
+							</div>
+							<div class="cr_mlist">
+								<h2>您好，欢迎princewhj回来</h2>
+								<ul>
+									<li>会员编号：<strong>9898798</strong></li>
+									<li>等级：<span>[如何升级]</span>　等级积分：<b>155</b></li>
+								</ul>
+							</div>
+						</div>
+						<div class="cr_admonish">
+							<div class="cr_admonishtop"></div>
+							<div class="cr_caution">
+								<ul>
+									<li class="cr_a"><span>1</span>条评论详情</li>
+									<li class="cr_b"><span>1</span>个待处理订单</li>
+									<li class="cr_c"><span>1</span>条评论详情</li>
+									<li class="cr_d"><span>1</span>条评论详情</li>
+								</ul>
+							</div>
+							<div class="cr_admonishbottom"></div>
+						</div>
+					</div>
+					<div class="cr_blankflow"></div>
+					<!--会员、提示结束-->
+					<!--会员订单-->
+					<div class="order_form">
+						<div class="of_top"></div>
+						<!--订单标题-->
+						<div class="of_tittle">
+							<ul>
+								<li class="first">待定付款单号</li>
+								<li class="time">下单时间</li>
+								<li>收货人</li>
+								<li>总价</li>
+								<li>状态</li>
+								<li>付款方式</li>
+								<li class="last">操作</li>
+							</ul>
+						</div>
+						<!--订单标题结束-->
+						<!--订单内容-->
+						<div class="of_details">
+							<ul>
+								<li class="first"><input type="radio" name="sex" value=""/></li>
+								<li class="second">543756837465876</li>
+								<li class="time">2011-11-11　20:13</li>
+								<li>王宏俊</li>
+								<li>￥56</li>
+								<li><span>等待付款</span></li>
+								<li>银行转账</li>
+								<li class="last"><span>提交凭证</span><b>查看</b></li>
+							</ul>
+						</div>
+						<!--订单内容结束-->
+						<!--订单内容操作-->
+						<div class="of_ctrl">
+							<p><a href="#">取消所选订单</a></p>
+							<span>查看所有<b>2</b>笔订单</span>
+						</div>
+						<!--订单内容操作结束-->
+						<div class="of_bottom"></div>
+					</div>
+					<!--会员订单结束-->
+					<!--会员首页-推荐商品-->
+					
+					<!--会员首页-推荐商品结束-->
+				</div>
+				<!--右侧正文结束-->
+				<div class="rr_bottom"></div>
+			</div>
+		</div>	
+		<!--会员中心首页右侧结束-->
+		<!--帮助-->
+		<div class="help">
+			<div class="rim">
+				<div class="spread">
+					<div class="h_use">
+						<span></span>
+						<h1>新手指南</h1>
+						<ul>
+							<li><a href="#">注册新用用户</a></li>
+							<li><a href="#">注册新用用户</a></li>
+						</ul>
+					</div>
+					<div class="h_pay">
+						<span></span>
+						<h1>新手指南</h1>
+						<ul>
+							<li><a href="#">注册新用用户</a></li>
+							<li><a href="#">注册新用用户</a></li>
+						</ul>
+					</div>
+					<div class="h_send">
+						<span></span>
+						<h1>新手指南</h1>
+						<ul>
+							<li><a href="#">注册新用用户</a></li>
+							<li><a href="#">注册新用用户</a></li>
+						</ul>
+					</div>
+					<div class="h_serve">
+						<span></span>
+						<h1>新手指南</h1>
+						<ul>
+							<li><a href="#">注册新用用户</a></li>
+							<li><a href="#">注册新用用户</a></li>
+						</ul>
+					</div>
+					<div class="h_message">
+						<span></span>
+						<h1>新手指南</h1>
+						<ul>
+							<li><a href="#">注册新用用户</a></li>
+							<li><a href="#">注册新用用户</a></li>
+						</ul>
+					</div>
+					<div class="h_about">
+						<span></span>
+						<h1>新手指南</h1>
+						<ul>
+							<li><a href="#">注册新用用户</a></li>
+							<li><a href="#">注册新用用户</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--帮助结束-->
+	</div>
+	<!--正文结束-->
+	<!--页脚-->
+	<div id="foot">
+		<!--页脚友情连接-->
+			<a href="#"></a><@image src="images/sltu5.jpg" alt="页脚友情连接图片" />
+			<a href="#"></a><@image src="images/sltu5.jpg" alt="页脚友情连接图片" />
+			<a href="#"></a><@image src="images/sltu5.jpg" alt="页脚友情连接图片" />
+		<!--页脚友情连接结束-->
+		<!--页脚信息-->
+		<p>Copyright 2011-2011 美睛眼镜 版权所有 京ICP证88888888号</p>
+		<!--页脚信息结束-->
+	</div>
+	<!--页脚结束-->
+</body>
+</html>

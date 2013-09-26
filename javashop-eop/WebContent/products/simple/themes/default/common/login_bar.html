@@ -1,0 +1,21 @@
+<ul>
+<#if isLogin >
+<script type="text/javascript">var isLogin= true;</script>
+	<li>您好：${member.uname}</li>
+	<li><a href="member_index.html">[会员中心]</a></li>
+	<li><a href="logout.html">[退出]</a></li>
+<#else>
+<script type="text/javascript">var isLogin= false;</script>
+
+
+	<li>
+	<a href="login.html">登录 </a>
+	</li>
+	
+	
+	<li>
+	<a href="register.html">注册 </a>
+	</li>
+
+</#if>
+</ul>

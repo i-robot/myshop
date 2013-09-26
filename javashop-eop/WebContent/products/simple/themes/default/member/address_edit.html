@@ -1,0 +1,109 @@
+<#assign regionSelect = "com.enation.app.base.component.widget.regions.RegionSelectDirective"?new()>
+
+<div class="data">
+	<h2>我的收获地址</h2>
+</div>	
+
+<!--温馨提示-->
+<div class="tip">
+	<div class="top"></div>
+	<div class="body">
+		<@image src="images/gth.jpg"/>
+	
+		<div>
+			<h2>温馨提示</h2>
+			<p>1、这里将显示您的收货地址信息</p>
+			<p>2、您还可以管理您的收货地址簿、增加新的收货地址等操作。</p>
+		</div>
+	</div>
+	<div class="bottom"></div>
+</div>
+
+<!--温馨提示结束-->
+
+<div class="tab">
+<ul >
+	<li ><a href="member_address.html"><span>收货地址管理</span></a></li>
+	<li class="selected"><a href="javascript:;"><span>修改收货地址</span></a></li>
+</ul>
+</div>
+
+<div class="form_wrap white_box">
+<div class="box" >
+	<div class="top"></div>
+	<div class="body">
+ 
+	<form    class="validate"   action="member_address.html?action=editsave" method="post">
+	<input type="hidden" name="address.addr_id" value="${address.addr_id}"/>
+ 
+	
+		<table   cellspacing="0" cellpadding="0" border="0" >
+			<tbody>
+				<tr>
+					<th>默认收货地址：</th>
+					<td>
+					<label><input type="radio"   <#if address.def_addr == 0>checked</#if> value="0" name="address.def_addr">否</label>
+					<label><input type="radio"  value="1" <#if address.def_addr == 1>checked</#if> name="address.def_addr">是</label>
+					</td>
+				</tr>
+				<tr>
+					<th><em></em>姓名：</th>
+					<td>
+					<input type="text"  value="${address.name!''}" isrequired="true" name="address.name" class="input_text" >
+					</td>
+				</tr>
+				<tr>
+					<th>手机：</th>
+					<td><input type="text"   value="${address.mobile!''}"  class="input_text"  name="address.mobile" id="mobile" ></td>
+				</tr>
+						
+				<tr>
+					<th>电话：</th>
+					<td>
+					<input type="text"  dataType="tel_num" value="${address.tel!''}"  class="input_text"  name="address.tel" id="tel"  >
+					<span class="infotips">其中联系电话和联系手机必须填写一项</span>
+					</td>
+				</tr>
+		
+				<tr>
+					<th><em></em>地区：</th>
+					<td>
+					 <@regionSelect province_id="${ address.province_id }" city_id="${ address.city_id }" region_id="${ address.region_id }" />
+					</td>
+				</tr>
+				<tr>
+					<th><em></em>地址：</th>
+					<td><textarea   rows="3" cols="30" name="address.addr"
+						isrequired="true" type="textarea" >${address.addr!''}</textarea></td>
+				</tr>
+				<tr>
+					<th><em></em>邮编：</th>
+					<td>
+					<input value="${address.zip!''}" isrequired="true" name="address.zip"  class="input_text"  dataType="post_code" >
+					 </td>
+				</tr>
+				<tr>
+					<th></th>
+		 
+					<td>
+						<div class="btn"><input type="submit" class="yellow_btn" value="保存并返回"></div>
+					</td>
+		 
+				</tr>
+			</tbody>
+		</table>
+ 
+	</form>
+	</div>
+	<div class="bottom"></div>
+
+</div>
+</div>
+
+
+<script>
+//地区联动选择-选择最后一级（区）时自动设置邮编
+RegionsSelect.regionChange=function(regionid,name,zipcode){
+	$("#zipcode").val(zipcode);
+};
+</script>

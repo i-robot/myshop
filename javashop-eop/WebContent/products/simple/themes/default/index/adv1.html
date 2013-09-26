@@ -1,0 +1,27 @@
+<#if !advList?exists || advList?size==0>
+没有上传广告
+<#else>
+<div name="__DT" class="slides" <#if width?exists>width="${width}"</#if> <#if height?exists>height="${height}"</#if> >
+<ul class="slide-pic" <#if width?exists>width="${width}"</#if> <#if height?exists>height="${height}"</#if> >
+    <#list advList as adv>
+	<li class="" <#if adv_index == 0>style="display: list-item;"<#else>style="display:none;"</#if>><a target="_blank" title="${adv.aname!''}"
+		href="${ctx}/core/adv!click.do?advid=${adv.aid}"><@image
+		border="0" src="${adv.atturl}" width="${width!''}" height="${height!''}" 
+		alt="${adv.aname!''}" /></a></li>
+	</#list>
+</ul>
+<ul class="slide-li op">
+    <#list advList as adv>
+    <li class="<#if adv_index == 0>cur</#if><#if !adv_has_next> last</#if>"></li>
+	</#list>
+</ul>
+<ul class="slide-li slide-txt">
+    <#list advList as adv>
+    <li class="<#if adv_index == 0>cur</#if><#if !adv_has_next> last</#if>"><a target="_blank"
+		href="${ctx}/core/adv!click.do?advid=${adv.aid}">${adv.aname!''}</a>
+	</li>
+	</#list>
+</ul>
+</div>
+
+</#if>

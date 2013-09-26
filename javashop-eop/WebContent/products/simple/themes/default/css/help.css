@@ -1,0 +1,159 @@
+
+/**************************************************************************
+帮助中心-帮助中心图标
+*****************************************************************************/
+#main{width:980px;margin:0 auto;}
+#main .aid{width:980px;height:69px;border-top:1px solid #e7e8e4;}
+/*************************************************************************
+帮助中心-帮助中心左侧帮助导航
+**************************************************************************/
+#main  .a_left{width:188px;border:1px solid #c6c6c6;padding:1px;float:left;display:inline;margin-right:7px;}
+#main  .a_left div{width:188px;overflow:hidden;}
+#main  .a_left div h1{width:133px;font-size:14px;font-weight:normal;background-color:#ececee;height:33px;line-height:33px;padding-left:55px;}
+#main  .a_left div ul{width:188px;overflow:hidden;}
+#main  .a_left div ul li{width:135px;padding-left:53px;height:27px;line-height:27px;border-bottom:1px dashed #dedede;}
+#main  .a_left div ul .last{border:0px none;}
+#main  .a_left div ul li a{color:#666;}
+/***************************************************************************
+帮助中心-帮助中心右侧详细讲解
+****************************************************************************/
+#main  .a_right{width:777px;border:1px solid #c6c6c6;padding:1px;float:left;display:inline;}
+#main  .a_right h1{width:767px;font-size:14px;height:30px;line-height:30px;background-color:#ececee;padding-left:10px;}
+#main  .a_right h2{margin:9px 14px;border-bottom:1px solid #ddd;width:724px;height:23px;line-height:23px;background:url(../images/bzh2bj.jpg) no-repeat left center;padding-left:15px;}
+#main  .a_right p{width:735px;line-height:22px;text-align:justify;color:#666;margin:0px 14px;}
+
+/**************************************************************************
+订单详情页面-query_detail.html-左侧订单详情 
+*****************************************************************************/
+#main  .q_text{width:980px;overflow:hidden;clear:both;}
+#main  .q_text .q_outside{width:753px;float:left;display:inline;overflow:hidden;}
+#main  .q_text .q_outside .q_outsidetop{width:753px;height:8px;background:url(../images/hylyt.jpg) no-repeat left top;overflow:hidden;}
+#main  .q_text .q_outside .q_outsidebottom{width:753px;height:8px;background:url(../images/hybx.jpg) no-repeat left top;}
+#main  .q_text .q_outside .q_outboard{width:751px;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;}
+#main  .q_text .q_outside .q_outboard .q_num{width:751px;height:36px;background-color:#eee;border-bottom:1px solid #d2dcdb;overflow:hidden;}
+#main  .q_text .q_outside .q_outboard .q_num p{margin-left:10px;width:400px;height:36px;line-height:36px;color:#6c6c6c;float:left;display:inline;font-size:14px;}
+#main  .q_text .q_outside .q_outboard .q_num p span{color:#000;margin-right:5px;}
+#main  .q_text .q_outside .q_outboard .q_num div{float:right;display:inline;width:186px;height:36px;}
+#main  .q_text .q_outside .q_outboard .q_num div a{display:block;width:75px;height:33px;color:#53a0be;float:left;font-weight:bold;text-align:center;line-height:33px;}
+#main  .q_text .q_outside .q_outboard .q_num div .voucher{font-weight:normal;width:110px;color:#fff;background:url(../images/jshop_button.jpg) no-repeat left -180px;}
+#main  .q_text .q_outside .q_outboard .q_num div .voucher:hover{font-weight:normal;width:110px;color:#fff;background:url(../images/jshop_button.jpg) no-repeat -138px -180px;}
+/********************************************
+会员中心-订单详情-订单流程
+*********************************************/
+#main  .q_text .q_outside  .q_path{padding-bottom:19px;width:751px;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;background-color:#fff;overflow:hidden;}
+#main  .q_text .q_outside  .q_path ul{width:800px;overflow:hidden;margin-left:13px;}
+#main  .q_text .q_outside  .q_path ul li{width:71px;float:left;display:inline;margin-left:49px;text-align:center;}
+#main  .q_text .q_outside  .q_path ul li p{color:#000;}
+#main  .q_text .q_outside  .q_path ul li span{color:#848484;display:none;}
+#main  .q_text .q_outside  .q_path ul li .selected{display:inline;}
+/*************************************************
+会员中心-收信地址
+***************************************************/
+#main  .q_text .q_outside  .q_address{padding:31px 0px 10px;width:751px;border:1px solid #dbdbdb;overflow:hidden;background-color:#fff;}
+#main  .q_text .q_outside  .q_address .q_same{width:751px;overflow:hidden;margin-bottom:21px;}
+#main  .q_text .q_outside  .q_address .q_same h1{width:110px;height:20px;line-height:20px;font-weight:bold;color:#000;float:left;display:inline;margin-right:26px;text-align:right;}
+#main  .q_text .q_outside  .q_address .q_same ul{width:600px;overflow:hidden;float:left;display:inline;}
+#main  .q_text .q_outside  .q_address .q_same ul li{width:600px;overflow:hidden;height:20px;line-height:20px;color:#000;}
+/*******************************************************************
+会员中心-商品清单标题
+********************************************************************/
+#main  .q_text .q_outside .q_tittle{width:751px;height:69px;overflow:hidden;background-color:#fff;border:1px solid #dbdbdb;border-top:0px none;}
+#main  .q_text .q_outside .q_tittle h2{padding-left:15px;width:731px;height:38px;line-height:38px;color:#333;padding-left;20px;}
+#main  .q_text .q_outside .q_tittle ul{padding-left:15px;width:800px;overflow:hidden;height:31px;background-color:#efefef;}
+#main  .q_text .q_outside .q_tittle ul li{width:66px;height:31px;line-height:31px;margin-right:22px;float:left;display:inline;text-align:center;color:#000;}
+#main  .q_text .q_outside .q_tittle ul .first{width:380px;}
+/*******************************************************************
+会员中心-商品列表
+********************************************************************/
+#main  .q_text .q_outside .q_list{width:751px;overflow:hidden;background-color:#fff;border:1px solid #dbdbdb;border-top:0px none;}
+#main  .q_text .q_outside .q_list table{width:751px;overflow:hidden;border-collapse:collapse;border-spacing:0px;}
+#main  .q_text .q_outside .q_list table tr{width:751px;}
+#main  .q_text .q_outside .q_list table tr td{overflow:hidden;width:66px;vertical-align:middle;padding:15px 0px 15px 22px;text-align:center;}
+#main  .q_text .q_outside .q_list table tr .first{width:380px;padding:15px 0px 15px 15px;text-align:left;}
+/*************************************************************
+会员中心-订单总价、计价
+**************************************************************/
+#main  .q_text .q_outside .q_valuation{overflow:hidden;background-color:#fff;width:751px;border-left:1px solid #dbdbdb;border-right:1px solid #dbdbdb;}
+#main  .q_text .q_outside .q_valuation ul{margin:15px 10px 0px 0px;float:right;display:inline;padding-bottom:20px;}
+#main  .q_text .q_outside .q_valuation ul li{height:20px;line-height:20px;overflow:hidden;}
+#main  .q_text .q_outside .q_valuation ul li h2{font-weight:normal;width:680px;float:left;display:inline;text-align:right;}
+#main  .q_text .q_outside .q_valuation ul li p{float:left;display:inline;}
+#main  .q_text .q_outside .q_valuation ul li b{float:left;display:inline;font-weight:normal;color:#13ba2c;}
+#main  .q_text .q_outside .q_valuation ul li span{float:left;display:inline;color:#dd5d3a;font-size:16px;}
+
+
+/**************************************************************************
+订单详情页面-query_detail.html-左侧订单详情 
+*****************************************************************************/
+#main  .q_text .q_recgood{width:217px;float:right;display:inline;background-color:#f5f6f1;overflow:hidden;}
+#main  .q_text .q_recgood h1{width:134px;padding-left:49px;border-bottom:1px solid #e7e8e4;height:36px;line-height:36px;font-size:14px;font-weight:bold;background:url(../images/wjx.jpg) no-repeat 14px center;}
+#main  .q_text .q_recgood .q_googlist{width:183px;overflow:hidden;margin-left:17px;}
+#main  .q_text .q_recgood .q_googlist ul{width:198px;overflow:hidden;}
+#main  .q_text .q_recgood .q_googlist ul li{width:173px;height:60px;overflow:hidden;border-top:1px solid #e7e7e4;padding:6px 0px 8px 4px;}
+#main  .q_text .q_recgood .q_googlist ul li img{width:56px;height:56px;padding:2px;background:url(../images/sytubk.jpg) no-repeat left top;float:left;display:inline;margin-right:16px;}
+#main  .q_text .q_recgood .q_googlist ul li .q_intro{width:97px;height:60px;overflow:hidden;}
+#main  .q_text .q_recgood .q_googlist ul li .q_intro div{width:97px;overflow:hidden;height:40px;}
+#main  .q_text .q_recgood .q_googlist ul li .q_intro div h2{width:97px;line-height:18px;overflow:hidden;text-align:justift;color:#53a0be;font-weight:normal;}
+#main  .q_text .q_recgood .q_googlist ul li .q_intro p{width:97px;line-height:24px;overflow:hidden;color:#fd834c;}
+#main  .q_text .q_recgood .q_wares{width:198px;margin-left:9px;overflow:hidden;}
+#main  .q_text .q_recgood .q_wares img{width:198px;height:300px;margin-bottom:15px;}
+/**************************************************************************I
+查询页-query_index.html
+****************************************************************************/
+#main .top_space{width:980px;height:8px;border-top:1px solid #e7e8e4;margin:0px auto;}
+#main .rim{width:978px;border:1px solid #b5b6b8;overflow:hidden;}
+#main .rim .rim_tittle{width:943px;height:55px;line-height:55px;padding-left:35px;border-bottom:1px dashed #cfcfcf;}
+#main .rim .rim_tittle h1{width:987px;padding-left:46px;background:url(../images/hdj.jpg) no-repeat left center;}
+/**************************************************************************
+查询页-query_index.html-收货人查询
+****************************************************************************/
+#main .rim .rim_receive{width:941px;overflow:hidden;margin:33px 0px 48px 37px;}
+#main .rim .rim_receive .rim_entering{width:434px;height:111px;padding-top:31px;background:url(../images/lbj.jpg) no-repeat left top;float:left;display:inoine;}
+#main .rim .rim_receive .rim_entering div{width:434px;height:20px;line-height:20px;margin-bottom:15px;clear:both;}
+#main .rim .rim_receive .rim_entering div label{width:85px;height:20px;line-height:20px;float:left;display:inline;text-align:right;color:#6c6c6c;}
+#main .rim .rim_receive .rim_entering div input{width:128px;float:left;display:inline;height:20px;line-height:20px;border:1px solid #a29f9f;margin-right:19px;}
+#main .rim .rim_receive .rim_entering div p{width:180px;height:20px;line-height:20px;float:left;display:inline;color:#6c6c6c;}
+#main .rim .rim_receive .rim_entering a{width:110px;height:33px;margin-left:144px;line-height:33px;text-align:center;color:#fff;display:block;background:url(../images/jshop_button.jpg) no-repeat left -180px;}
+#main .rim .rim_receive .rim_entering a:hover{background:url(../images/jshop_button.jpg) no-repeat -138px -180px;}
+#main .rim .rim_receive .rim_yesno{width:150px;float:left;display:inline;height:53px;margin:58px 0px 0px 141px;}
+#main .rim .rim_receive .rim_yesno a{margin-left:20px;width:110px;height:33px;line-height:33px;text-align:center;color:#fff;display:block;background:url(../images/jshop_button.jpg) no-repeat left -180px;}
+#main .rim .rim_receive .rim_yesno a:hover{background:url(../images/jshop_button.jpg) no-repeat -138px -180px;}
+#main .rim .rim_receive .rim_yesno p{width:150px;height:20px;line-height:20px;text-align:center;}
+#main .rim .rim_receive .rim_yesno p a{display:inline;height:20px;line-height:20px;background:none;color:#64c000;padding:0px;margin:0px;}
+/**************************************************************************I
+查询页-query_index.html-列表
+****************************************************************************/
+#main .rim .rim_list{width:902px;margin:0px 0px 12px 37px;}
+#main .rim .rim_list h2{width:902px;height:40px;line-height:40px;background:url(../images/lstou.jpg) no-repeat left top;display:block;}
+#main .rim .rim_list .rim_content{width:900px;border-left:1px solid #dbdfde;border-right:1px solid #dbdfde;}
+#main .rim .rim_list .rim_content table{width:900px;}
+#main .rim .rim_list .rim_content table tr{width:900px;height:30px;}
+#main .rim .rim_list .rim_content table tr td{text-align:center;width:120px;}
+#main .rim .rim_list .rim_content table tr td b{font-weight:normal;color:#49a9cf;}
+#main .rim .rim_list .rim_content table tr td span{color:#ed7108}
+#main .rim .rim_list .rim_content table tr td a{color:#49a9cf;margin-right:10px;}
+#main .rim .rim_list .rim_content table tr .first{width:200px;}
+/**************************************************************************I
+查询页-query_index.html-页码
+****************************************************************************/
+#main .rim .rim_list .rim_pager{width:900px;border-left:1px solid #dbdfde;border-right:1px solid #dbdfde;height:45px;}
+#main .rim .rim_list .rim_pager div{margin:15px 9px 0px 0px;float:right;display:inline;}
+#main .rim .rim_list .rim_pager div span{float:left;display:block;margin-right:2px;height:21px;line-height:21px;}
+#main .rim .rim_list .rim_pager div span a{text-align:center;display:block;border:1px solid #d2d2d2;color:#616c66;}
+#main .rim .rim_list .rim_pager div span a:hover{border:1px solid #6a6a6a;}
+#main .rim .rim_list .rim_pager div ul{float:left;display:inline;}
+#main .rim .rim_list .rim_pager div ul li{float:left;display:inline;margin-right:2px;height:21px;line-height:21px;}
+#main .rim .rim_list .rim_pager div ul li a{width:21px;text-align:center;display:block;color:#616c66;border:1px solid #d2d2d2;}
+#main .rim .rim_list .rim_pager div ul li a:hover{border:1px solid #6a6a6a;}
+#main .rim .rim_list .rim_pager div ul .selected a{background:url(../images/xzym.jpg) no-repeat left top;}
+#main .rim .rim_list .rim_bottom{width:902px;height:10px;display:block;background:url(../images/bd.jpg) no-repeat left top;}
+/********************************************************************
+查询页-query_index.html-注册有惊喜
+**********************************************************************/
+#main .rim .rim_startle{width:978px;overflow:hidden;}
+#main .rim .rim_startle h2{padding-left:91px;width:887px;height:31px;line-height:31px;border-bottom:1px dashed #c4c4c4;background:url(../images/jx.jpg) no-repeat 34px center;}
+#main .rim .rim_startle .rim_item{width:978px;overflow:hidden;margin:10px 0px;}
+#main .rim .rim_startle .rim_item img{float:left;display:inline;margin:0px 42px;}
+#main .rim .rim_go{width:978px;height:42px;line-height:42px;}
+#main .rim .rim_go a{float:right;color:#454545;margin-right:52px;display:inline;}
+#main .rim .rim_go a span{color:#91b321;font-weight:bold;}

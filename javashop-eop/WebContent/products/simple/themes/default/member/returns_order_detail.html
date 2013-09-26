@@ -1,0 +1,116 @@
+<div id="main">
+<div id="content_wrapper">
+<div class="crew_right">
+<div class="rr_header"></div>
+
+
+
+
+
+
+
+
+ 
+<div class="conInner">
+	<div class="rowBox2 userStat">
+		<span class="rb2Top"></span>
+		<div class="rb2Inner clearfix">
+			<div class="orderMeta clearfix">
+				<h1>退换货申请详细信息</h1>
+			</div>
+			<div class="orderInfor" style="border-top: 0px; padding-top: 0px;">
+				<table style="width:100%">
+					<tr>
+						<td class="label">订单编号</td>
+						<td>${orders.sn}</td>
+					</tr>
+					<tr>
+						<td class="label">下单日期</td>
+						<td><@dateformat time="${orders.create_time?c}"	pattern="yyyy-MM-dd HH:mm"/></td>
+					</tr>
+					<tr>
+						<td class="label">申请理由</td>
+						<td>${returnOrder.apply_reason!""}</td>
+					</tr>
+
+					<tr>
+						<td class="label">状态</td>
+						<td>
+								<#if returnOrder.state == 0><span class="status-process">等待处理</span></#if>
+								<#if returnOrder.state == 1> <span class="status-expired">
+									<#if returnOrder.type == 1>退货申请审核拒绝</#if> <#if returnOrder.type
+									== 2>换货申请审核拒绝</#if> </span> </#if> <#if returnOrder.state == 2> <span
+									class="status-deliver"> <#if returnOrder.type ==
+									1>退货申请审核通过，等待客户将货品退回</#if> <#if returnOrder.type ==
+									2>换货申请审核通过，等待客户将货品退回</#if> </span> </#if> <#if returnOrder.state == 3><span
+									class="status-used"> <#if returnOrder.type ==
+									1>客户退回货品已收到，正在执行退款</#if> <#if returnOrder.type ==
+									2>客户退回货品已收到，新换货物已发出</#if> </span></#if> <#if returnOrder.state == 4><span
+									class="status-success"> <#if returnOrder.type ==
+									1>退货已完成</#if> <#if returnOrder.type == 2>换货已完成</#if> </span></#if>
+							</td>
+					</tr>
+					<#if returnOrder.state == 2>
+					<tr>
+						<td class="label">拒绝理由</td>
+						<td>${returnOrder.refuse_reason!""}</td>
+					</tr>
+					</#if>
+				</table>
+			</div>
+			<div class="shoppingList">
+
+				<h1 class="clearfix">
+					<span class="title">商品清单</span>
+				</h1>
+
+				<table class="prods" style="width:100%">
+					<tr>
+						<th class="param">商品名称</th>
+						<th class="price">商品积分</th>
+						<th class="num">价格</th>
+						<th class="price">数量</th>
+						<th class="point">小计</th>
+						<th class="memberunit">货物状态</th>
+					</tr>
+					<#list orderItemsList as item>
+					  
+					<tr>
+						<td class="param">
+							<dl>
+								<dt>
+									<a href="goods-${item.goods_id}.html" title="${item.name}">${item.name}</a>
+								</dt>
+								<dd>商品编号：${item.sn}</dd>
+							</dl>	
+						</td>
+						<td>${(item.num * item.price)?string("0")}</td>
+						<td>￥${item.price?string("0.##")}</td>
+						<td>${item.num}</td>
+						<td><strong>￥${(item.num * item.price)?string("0.##")}</strong>
+						</td>
+						<td><#if item.state ==0>正常</#if> <#if item.state
+							==1>申请退货</#if> <#if item.state ==2>申请换货</#if> <#if
+							item.state ==3>退货已拒绝</#if> <#if item.state
+							==4>换货已拒绝</#if> <#if item.state ==5>退货已通过审核，等待退回货物</#if>
+							<#if item.state ==6>换货已通过审核，等待退回货物</#if> <#if
+							item.state ==7>退货已收货，等待退款</#if> <#if item.state
+							==8>换货已收货，新货已发出</#if> <#if item.state ==9>退货结束</#if> <#if
+							item.state ==10>换货结束</#if></td>
+					</tr>
+					</#list>
+				</table>
+			</div>
+		</div>
+	 
+	</div>
+</div>
+
+
+
+<div class="rr_bottom"></div>
+</div>
+
+</div>
+</div>
+ 

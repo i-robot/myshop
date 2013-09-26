@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+${widget_group_header}
+
+<@css src="groupbuy/css/base.css" iscommon="true"/>
+<@css src="css/dialog.css" iscommon="true"/>
+<@css src="groupbuy/css/city.css" iscommon="true"/>
+<@script src="groupbuy/js/base.js" compress="true" iscommon="true"/>
+<!--[if IE 6]>
+	<script src="${ctx}/themes/default/groupbuy/js/DD_belatedPNG_0.0.8a.js"/>
+    <script> DD_belatedPNG.fix('.pngfix'); </script>
+<![endif]-->
+
+</head>
+<body id="change-city">
+<div id="doc">
+	<div id="hdw">
+        <div id="hd">
+            <div id="logo"><a href="${ctx}/groupbuy/list.html" class="pngfix ">团购</a></div>
+            <div class="followus" id="followus">
+                <ul>
+                    <li class="first">
+                        <!-- <a class="mobile pngfix">下载手机版</a>| -->
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="favorite pngfix" id="favorite">加入收藏夹</a>
+                        <script type="text/javascript">
+                        $("#favorite").click(function(){
+                            addFavorite(document.title, location.href);
+                        });
+                        </script>
+                    </li>
+                </ul>
+            </div>
+       </div>
+    </div>
+	
+
+	
+
+
+

@@ -1,0 +1,69 @@
+<#assign orderstatus= "com.enation.app.shop.core.taglib.OrderStatusDirectiveModel"?new()>
+<@script src="js/Order.js" compress="true" />
+
+
+<div class="box" style="top:0">
+<div class="top"></div>
+<div class="order_detail_wrapper">
+	<div class="title">
+		<#include 'orderdetail/title.html' />
+	</div>
+	
+	<div class="flow ">
+		<div class="status${order.status}"></div>
+	</div>
+	
+	<div class="log">
+		<ol>
+			<#list orderLogList as log>
+			<li><span class="date"><@dateformat time="${log.op_time?c}" pattern="yyyy-MM-dd HH:mm"/></span>${log.message}</li>
+			</#list>
+		</ol>
+	</div>
+	
+	<div class="receiver">
+		<#include 'orderdetail/receiver.html' />		
+	</div>
+	
+	
+	<div class="goodslist">
+		<h1>商品清单</h1>
+		<#include 'orderdetail/goodslist.html' />
+		
+	</div>
+ 
+	<div class="receipt">
+		<h1>发票信息</h1>
+		${widget_receipt!'发票组件未启动用或未能正常安装'}
+		<div class="clear"></div>
+	</div>
+	<hr/>
+	<div class="total">
+		<#include 'orderdetail/total.html' />
+	</div>
+	
+</div>
+<div class="bottom"></div>
+
+</div>
+<script>
+
+function showRogInfo(logino,logicode){
+	var dialog = $.dialog({
+		title:"物流查询",width:500
+	});
+ 
+	$.ajax({
+	    url:'widget.do?type=kuaidi&ajax=yes&logino='+logino+'&code='+logicode,
+	    success:function(html){
+	    	dialog.content(html);	  
+	    },
+	    cache:false
+	});	
+}
+
+
+$(function(){
+	Order.init();	
+});
+</script>
